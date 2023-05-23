@@ -1,0 +1,479 @@
+{
+  "name": "cyolo",
+  "label": "Cyolo",
+  "version": "1.0.0",
+  "description": "Cyolo helps enterprises provide their global workforce with convenient and secure access to applications, resources, workstations, servers, and files, regardless of location or device used.",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "category": "Identity and Access Management",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "value": "",
+        "description": "URL of the Cyolo server to which you will connect and perform the automated operations.",
+        "name": "server_url"
+      },
+      {
+        "title": "API Key",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "description": "Specify the API Key used to access the Cyolo APIs and perform automated operations.",
+        "name": "api_key"
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "title": "Get Users List",
+      "description": "Retrieves a list of users from Cyolo server",
+      "operation": "get_users_list",
+      "category": "investigation",
+      "annotation": "get_users_list",
+      "parameters": [],
+      "output_schema": [
+        {
+          "id": "",
+          "kind": "",
+          "name": "",
+          "system": "",
+          "ctime": "",
+          "mtime": "",
+          "enabled": "",
+          "email": "",
+          "phone_number": "",
+          "totp_enabled": "",
+          "totp_enrolled": "",
+          "supervisor": "",
+          "personal_desktop": "",
+          "enrolled": "",
+          "email_enrolled": "",
+          "sms_enrolled": "",
+          "allowed_idps": "",
+          "labels": [],
+          "last_login": "",
+          "must_change_password": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get User Policy",
+      "description": "Retrieves the list of policies associated with the user based on the user ID provided",
+      "operation": "get_user_policy",
+      "category": "investigation",
+      "annotation": "get_user_policy",
+      "parameters": [
+        {
+          "title": "User ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Specify the user ID to retrieve its policies",
+          "name": "id"
+        }
+      ],
+      "output_schema": [
+        {
+          "id": "",
+          "kind": "",
+          "name": "",
+          "system": "",
+          "ctime": "",
+          "mtime": "",
+          "enabled": "",
+          "mappings": [
+            {
+              "id": "",
+              "kind": "",
+              "name": "",
+              "system": "",
+              "ctime": "",
+              "mtime": "",
+              "enabled": "",
+              "external": "",
+              "domain": "",
+              "internal": "",
+              "port": "",
+              "protocol": "",
+              "sso": {
+                "id": "",
+                "name": "",
+                "display_name": ""
+              },
+              "sso_forms_tpl": "",
+              "sso_forms_url": "",
+              "sso_credentials_origin": "",
+              "insecure_skip_verify": "",
+              "sso_headers": {},
+              "sso_home_dir": "",
+              "app_icon": "",
+              "initial_program": "",
+              "sso_forms_scrape_url": "",
+              "sso_vault_id": "",
+              "site": "",
+              "user_visible": "",
+              "properties": [],
+              "sso_form_matchers": {
+                "pre": {},
+                "post": {}
+              },
+              "saas_cert": ""
+            }
+          ],
+          "mapping_categories": [],
+          "users": [
+            {
+              "id": "",
+              "kind": "",
+              "name": "",
+              "system": "",
+              "ctime": "",
+              "mtime": "",
+              "enabled": "",
+              "email": "",
+              "phone_number": "",
+              "totp_enabled": "",
+              "totp_enrolled": "",
+              "supervisor": "",
+              "personal_desktop": "",
+              "enrolled": "",
+              "email_enrolled": "",
+              "sms_enrolled": "",
+              "allowed_idps": "",
+              "labels": [],
+              "last_login": "",
+              "must_change_password": ""
+            }
+          ],
+          "capabilities": [],
+          "constraints": [
+            {
+              "constraint_id": "",
+              "value": ""
+            }
+          ],
+          "supervisors": [],
+          "webhooks": [],
+          "device_posture_profiles": [],
+          "groups": [],
+          "timed_access": "",
+          "trusted_certificates": [],
+          "group_supervisors": []
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get User By ID Or Name",
+      "description": "Retrieves the user details based on the ID or name provided.",
+      "operation": "get_user_by_id_or_name",
+      "category": "investigation",
+      "annotation": "get_user_by_id_or_name",
+      "parameters": [
+        {
+          "title": "User ID Or Name",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Specify the user ID or name to retrieve its details",
+          "name": "id"
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "kind": "",
+        "name": "",
+        "system": "",
+        "ctime": "",
+        "mtime": "",
+        "enabled": "",
+        "email": "",
+        "phone_number": "",
+        "totp_enabled": "",
+        "totp_enrolled": "",
+        "supervisor": "",
+        "personal_desktop": "",
+        "enrolled": "",
+        "email_enrolled": "",
+        "sms_enrolled": "",
+        "allowed_idps": "",
+        "labels": [],
+        "last_login": "",
+        "must_change_password": ""
+      },
+      "enabled": true
+    },
+    {
+      "title": "Delete User By ID Or Name",
+      "description": "Deletes the user details based on the ID or name provided.",
+      "operation": "delete_user_by_id_or_name",
+      "category": "investigation",
+      "annotation": "delete_user_by_id_or_name",
+      "parameters": [
+        {
+          "title": "User ID Or Name",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Specify the user ID or name to retrieve its details",
+          "name": "id"
+        }
+      ],
+      "output_schema": {
+        "status": "",
+        "result": ""
+      },
+      "enabled": true
+    },
+    {
+      "title": "Get Policy List",
+      "description": "Retrieves the policy list from the Cyolo server",
+      "operation": "get_policy_list",
+      "category": "investigation",
+      "annotation": "get_policy_list",
+      "parameters": [],
+      "output_schema": [
+        {
+          "id": "",
+          "kind": "",
+          "name": "",
+          "system": "",
+          "ctime": "",
+          "mtime": "",
+          "enabled": "",
+          "mappings": [
+            {
+              "id": "",
+              "kind": "",
+              "name": "",
+              "system": "",
+              "ctime": "",
+              "mtime": "",
+              "enabled": "",
+              "external": "",
+              "domain": "",
+              "internal": "",
+              "port": "",
+              "protocol": "",
+              "sso": {
+                "id": "",
+                "name": "",
+                "display_name": ""
+              },
+              "sso_forms_tpl": "",
+              "sso_forms_url": "",
+              "sso_credentials_origin": "",
+              "insecure_skip_verify": "",
+              "sso_headers": {},
+              "sso_home_dir": "",
+              "app_icon": "",
+              "initial_program": "",
+              "sso_forms_scrape_url": "",
+              "sso_vault_id": "",
+              "site": "",
+              "user_visible": "",
+              "properties": [],
+              "sso_form_matchers": {
+                "pre": {},
+                "post": {}
+              },
+              "saas_cert": ""
+            }
+          ],
+          "users": [
+            {
+              "id": "",
+              "kind": "",
+              "name": "",
+              "system": "",
+              "ctime": "",
+              "mtime": "",
+              "enabled": "",
+              "email": "",
+              "phone_number": "",
+              "totp_enabled": "",
+              "totp_enrolled": "",
+              "supervisor": "",
+              "personal_desktop": "",
+              "enrolled": "",
+              "email_enrolled": "",
+              "sms_enrolled": "",
+              "allowed_idps": "",
+              "labels": [],
+              "last_login": "",
+              "must_change_password": ""
+            }
+          ],
+          "capabilities": [],
+          "constraints": [
+            {
+              "constraint_id": "",
+              "value": ""
+            }
+          ],
+          "supervisors": [],
+          "webhooks": [],
+          "simple_groups": [],
+          "dynamic_groups": [],
+          "mapping_categories": [],
+          "timed_access": "",
+          "trusted_certificates": [],
+          "device_posture_profile_ids": [],
+          "group_supervisors": []
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Policy By ID Or Name",
+      "description": "Retrieves the policy details based on the ID or name provided from the Cyolo server",
+      "operation": "get_policy_by_id_or_name",
+      "category": "investigation",
+      "annotation": "get_policy_by_id_or_name",
+      "parameters": [
+        {
+          "title": "Policy ID Or Name",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Specify the policy ID or name to retrieve its details",
+          "name": "id"
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "kind": "",
+        "name": "",
+        "system": "",
+        "ctime": "",
+        "mtime": "",
+        "enabled": "",
+        "mappings": [
+          {
+            "id": "",
+            "kind": "",
+            "name": "",
+            "system": "",
+            "ctime": "",
+            "mtime": "",
+            "enabled": "",
+            "external": "",
+            "domain": "",
+            "internal": "",
+            "port": "",
+            "protocol": "",
+            "sso": {
+              "id": "",
+              "name": "",
+              "display_name": ""
+            },
+            "sso_forms_tpl": "",
+            "sso_forms_url": "",
+            "sso_credentials_origin": "",
+            "insecure_skip_verify": "",
+            "sso_headers": {},
+            "sso_home_dir": "",
+            "app_icon": "",
+            "initial_program": "",
+            "sso_forms_scrape_url": "",
+            "sso_vault_id": "",
+            "site": "",
+            "user_visible": "",
+            "properties": [],
+            "sso_form_matchers": {
+              "pre": {},
+              "post": {}
+            },
+            "saas_cert": ""
+          }
+        ],
+        "mapping_categories": [],
+        "users": [
+          {
+            "id": "",
+            "kind": "",
+            "name": "",
+            "system": "",
+            "ctime": "",
+            "mtime": "",
+            "enabled": "",
+            "email": "",
+            "phone_number": "",
+            "totp_enabled": "",
+            "totp_enrolled": "",
+            "supervisor": "",
+            "personal_desktop": "",
+            "enrolled": "",
+            "email_enrolled": "",
+            "sms_enrolled": "",
+            "allowed_idps": "",
+            "labels": [],
+            "last_login": "",
+            "must_change_password": ""
+          }
+        ],
+        "capabilities": [],
+        "constraints": [
+          {
+            "constraint_id": "",
+            "value": ""
+          }
+        ],
+        "supervisors": [],
+        "webhooks": [],
+        "device_posture_profiles": [],
+        "groups": [],
+        "timed_access": "",
+        "trusted_certificates": [],
+        "group_supervisors": []
+      },
+      "enabled": true
+    },
+    {
+      "title": "Get Simple Group List",
+      "description": "Retrieves the simple group list from the Cyolo server",
+      "operation": "get_simple_group_list",
+      "category": "investigation",
+      "annotation": "get_simple_group_list",
+      "parameters": [],
+      "output_schema": [
+        {
+          "id": "",
+          "kind": "",
+          "name": "",
+          "system": "",
+          "ctime": "",
+          "mtime": "",
+          "enabled": "",
+          "users": []
+        }
+      ],
+      "enabled": true
+    }
+  ]
+}
