@@ -72,17 +72,35 @@ def list_user_policies(config, params):
 
 
 def update_policy(config, params):
-    endpoint = f"policies/{params.pop('id')}"
+    endpoint = f"policies/{params.get('id')}"
     params = build_policy_payload(params)
-    params['timed_access'] = {
-        "enabled": params.pop('timed_access_status', False),
-        "start": handle_date(params.pop('start')) if params.get('start') else "00:00",
-        "end": handle_date(params.pop('end')) if params.get('end') else "00:00",
-        "days": [True if x in str(params.get('days')) else False for x in day_list]
+    original_policy = {}
+    for x in list_policies(config, params):
+        if x['id'] == str(params.get('id')):
+            original_policy = x
+            break
+    extract_id = ['users', 'mappings', 'dynamic_groups', 'simple_groups', 'group_supervisors', 'supervisors', 'webhooks', 'mapping_categories']
+    for x in extract_id:
+        int_list = list()
+        for y in original_policy[x]:
+            int_list.append(y['id'])
+        original_policy[x] = int_list
+    payload_params = ["name", "enabled", "mappings",  "users", "capabilities", "constraints", "supervisors", "webhooks", "simple_groups", "dynamic_groups", "mapping_categories", "group_supervisors", "ip_sources"]
+    updated_policy_payload = {}
+    for x in payload_params:
+        if isinstance(original_policy[x], list):
+            updated_policy_payload[x] = original_policy.get(x) + params.get(x) if params.get(x) else original_policy.get(x)
+        else:
+            updated_policy_payload[x] = params.get(x) if params.get(x) else original_policy.get(x)
+    updated_policy_payload['timed_access'] = {
+        "enabled": params.pop('timed_access_status', original_policy['enabled']),
+        "start": handle_date(params.get('start')) if params.get('start') else original_policy['timed_access']['start'],
+        "end": handle_date(params.get('end')) if params.get('end') else original_policy['timed_access']['end'],
+        "days": [True if x in str(params.get('days')) else False for x in day_list] if params.get('days') else original_policy['timed_access']['days']
     }
-    params.pop('days', "")
-    logger.error(f"payload is {params}")
-    response = make_api_call(method='POST', endpoint=endpoint, config=config, data=json.dumps(params))
+    updated_policy_payload['device_posture_profiles'] = original_policy.get('device_posture_profile_ids') + params.get('device_posture_profiles') if params.get('device_posture_profiles') else original_policy.get('device_posture_profile_ids')
+    logger.error(f"payload is {updated_policy_payload}")
+    response = make_api_call(method='POST', endpoint=endpoint, config=config, data=json.dumps(updated_policy_payload))
     if response:
         return {"status": "Successfully Updated"}
 
