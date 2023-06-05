@@ -8,13 +8,9 @@ import json
 import requests
 from connectors.core.connector import get_logger, ConnectorError
 from datetime import datetime
+from .constants import *
 
 logger = get_logger('cyolo')
-
-param_list = ['mappings', 'supervisors', 'users', 'simple_groups', 'dynamic_groups', 'webhooks',
-              'mapping_categories', 'trusted_certificates', 'device_posture_profiles']
-
-day_list = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 
 def make_api_call(method="GET", endpoint="", config=None, params=None, data=None, json_data=None):
@@ -75,19 +71,17 @@ def update_policy(config, params):
     endpoint = f"policies/{params.get('id')}"
     params = build_policy_payload(params)
     original_policy = {}
-    for x in list_policies(config, params):
-        if x['id'] == str(params.get('id')):
-            original_policy = x
+    for policy in list_policies(config, params):
+        if policy['id'] == str(params.get('id')):
+            original_policy = policy
             break
-    extract_id = ['users', 'mappings', 'dynamic_groups', 'simple_groups', 'group_supervisors', 'supervisors', 'webhooks', 'mapping_categories']
-    for x in extract_id:
-        int_list = list()
-        for y in original_policy[x]:
-            int_list.append(y['id'])
-        original_policy[x] = int_list
-    payload_params = ["name", "enabled", "mappings",  "users", "capabilities", "constraints", "supervisors", "webhooks", "simple_groups", "dynamic_groups", "mapping_categories", "group_supervisors", "ip_sources"]
+    for attr in POLICY_ATTR:
+        attr_id_list = list()
+        for attr_details in original_policy[attr]:
+            attr_id_list.append(attr_details['id'])
+        original_policy[attr] = attr_id_list
     updated_policy_payload = {}
-    for x in payload_params:
+    for x in PAYLOAD_PARAMS:
         if isinstance(original_policy[x], list):
             updated_policy_payload[x] = original_policy.get(x) + params.get(x) if params.get(x) else original_policy.get(x)
         else:
@@ -96,7 +90,7 @@ def update_policy(config, params):
         "enabled": params.pop('timed_access_status', original_policy['enabled']),
         "start": handle_date(params.get('start')) if params.get('start') else original_policy['timed_access']['start'],
         "end": handle_date(params.get('end')) if params.get('end') else original_policy['timed_access']['end'],
-        "days": [True if x in str(params.get('days')) else False for x in day_list] if params.get('days') else original_policy['timed_access']['days']
+        "days": [True if x in str(params.get('days')) else False for x in DAY_LIST] if params.get('days') else original_policy['timed_access']['days']
     }
     updated_policy_payload['device_posture_profiles'] = original_policy.get('device_posture_profile_ids') + params.get('device_posture_profiles') if params.get('device_posture_profiles') else original_policy.get('device_posture_profile_ids')
     logger.error(f"payload is {updated_policy_payload}")
@@ -125,6 +119,34 @@ def list_policies(config, params):
 def get_policy_by_id_or_name(config, params):
     endpoint = f"policies/{params.get('id')}"
     return make_api_call(endpoint=endpoint, config=config)
+
+
+def delete_user_from_policy(config, params):
+    endpoint = f"policies/{params.get('id')}"
+    params = build_policy_payload(params)
+    original_policy = {}
+    for policy in list_policies(config, params):
+        if policy['id'] == str(params.get('id')):
+            original_policy = policy
+            break
+    for attr in POLICY_ATTR:
+        attr_id_list = list()
+        for attr_details in original_policy[attr]:
+            attr_id_list.append(attr_details['id'])
+        original_policy[attr] = attr_id_list
+    updated_policy_payload = {}
+    for x in PAYLOAD_PARAMS:
+        if isinstance(original_policy[x], list):
+            updated_policy_payload[x] = original_policy.get(x)
+        else:
+            updated_policy_payload[x] = original_policy.get(x)
+    updated_policy_payload['timed_access'] = original_policy['timed_access']
+    updated_policy_payload['device_posture_profiles'] = original_policy.get('device_posture_profile_ids')
+    updated_policy_payload['users'] = [x for x in original_policy['users'] if x not in params.get('users')]
+    logger.error(f"payload is {updated_policy_payload}")
+    response = make_api_call(method='POST', endpoint=endpoint, config=config, data=json.dumps(updated_policy_payload))
+    if response:
+        return {"status": "Successfully Updated"}
 
 
 def list_simple_groups(config, params):
@@ -179,7 +201,7 @@ def list_certificates(config, params):
 
 def build_policy_payload(params):
     params = {k: v for k, v in params.items() if v is not None and v != ''}
-    for x in param_list:
+    for x in PARAM_LIST:
         if params.get(x):
             if isinstance(params.get(x), list):
                 params[x] = [str(item) for item in params.get(x)]
@@ -199,7 +221,7 @@ def create_policy(config, params):
         "enabled": params.pop('timed_access_status', False),
         "start": handle_date(params.pop('start')) if params.get('start') else "00:00",
         "end": handle_date(params.pop('end')) if params.get('end') else "00:00",
-        "days": [True if x in str(params.get('days')) else False for x in day_list]
+        "days": [True if x in str(params.get('days')) else False for x in DAY_LIST]
     }
     params.pop('days', "")
     logger.error(f"payload is {params}")
@@ -232,5 +254,6 @@ operations = {
     'list_mapping_categories': list_mapping_categories,
     'list_certificates': list_certificates,
     'create_policy': create_policy,
-    'update_policy': update_policy
+    'update_policy': update_policy,
+    'delete_user_from_policy': delete_user_from_policy
 }
