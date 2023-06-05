@@ -1,0 +1,1415 @@
+{
+  "name": "cyolo",
+  "label": "Cyolo",
+  "version": "1.0.0",
+  "description": "Cyolo helps enterprises provide their global workforce with convenient and secure access to applications, resources, workstations, servers, and files, regardless of location or device used.",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "category": "Identity and Access Management",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "placeholder": "https://console.example.cyolo.io",
+        "description": "URL of the Cyolo server to which you will connect and perform the automated operations.",
+        "name": "server_url"
+      },
+      {
+        "title": "API Key",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "description": "Specify the API Key used to access the Cyolo APIs and perform automated operations.",
+        "name": "api_key"
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "title": "Get Users List",
+      "description": "Retrieves a list of users from Cyolo",
+      "operation": "list_users",
+      "category": "investigation",
+      "annotation": "list_users",
+      "parameters": [],
+      "output_schema": [
+        {
+          "id": "",
+          "kind": "",
+          "name": "",
+          "system": "",
+          "ctime": "",
+          "mtime": "",
+          "enabled": "",
+          "email": "",
+          "phone_number": "",
+          "totp_enabled": "",
+          "totp_enrolled": "",
+          "supervisor": "",
+          "personal_desktop": "",
+          "enrolled": "",
+          "email_enrolled": "",
+          "sms_enrolled": "",
+          "allowed_idps": "",
+          "labels": [],
+          "last_login": "",
+          "must_change_password": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get User Policies",
+      "description": "Retrieves the list of policies associated with the user based on the user ID provided",
+      "operation": "list_user_policies",
+      "category": "investigation",
+      "annotation": "list_user_policies",
+      "parameters": [
+        {
+          "title": "User ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Specify the user ID to retrieve its policies",
+          "name": "id"
+        }
+      ],
+      "output_schema": [
+        {
+          "id": "",
+          "kind": "",
+          "name": "",
+          "system": "",
+          "ctime": "",
+          "mtime": "",
+          "enabled": "",
+          "mappings": [
+            {
+              "id": "",
+              "kind": "",
+              "name": "",
+              "system": "",
+              "ctime": "",
+              "mtime": "",
+              "enabled": "",
+              "external": "",
+              "domain": "",
+              "internal": "",
+              "port": "",
+              "protocol": "",
+              "sso": {
+                "id": "",
+                "name": "",
+                "display_name": ""
+              },
+              "sso_forms_tpl": "",
+              "sso_forms_url": "",
+              "sso_credentials_origin": "",
+              "insecure_skip_verify": "",
+              "sso_headers": {},
+              "sso_home_dir": "",
+              "app_icon": "",
+              "initial_program": "",
+              "sso_forms_scrape_url": "",
+              "sso_vault_id": "",
+              "site": "",
+              "user_visible": "",
+              "properties": [],
+              "sso_form_matchers": {
+                "pre": {},
+                "post": {}
+              },
+              "saas_cert": ""
+            }
+          ],
+          "mapping_categories": [],
+          "users": [
+            {
+              "id": "",
+              "kind": "",
+              "name": "",
+              "system": "",
+              "ctime": "",
+              "mtime": "",
+              "enabled": "",
+              "email": "",
+              "phone_number": "",
+              "totp_enabled": "",
+              "totp_enrolled": "",
+              "supervisor": "",
+              "personal_desktop": "",
+              "enrolled": "",
+              "email_enrolled": "",
+              "sms_enrolled": "",
+              "allowed_idps": "",
+              "labels": [],
+              "last_login": "",
+              "must_change_password": ""
+            }
+          ],
+          "capabilities": [],
+          "constraints": [
+            {
+              "constraint_id": "",
+              "value": ""
+            }
+          ],
+          "supervisors": [],
+          "webhooks": [],
+          "device_posture_profiles": [],
+          "groups": [],
+          "timed_access": "",
+          "trusted_certificates": [],
+          "group_supervisors": []
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get User By ID Or Name",
+      "description": "Retrieves the user details based on the ID or name provided.",
+      "operation": "get_user_by_id_or_name",
+      "category": "investigation",
+      "annotation": "get_user_by_id_or_name",
+      "parameters": [
+        {
+          "title": "User ID Or Name",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Specify the user ID or name to retrieve its details",
+          "name": "id"
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "kind": "",
+        "name": "",
+        "system": "",
+        "ctime": "",
+        "mtime": "",
+        "enabled": "",
+        "email": "",
+        "phone_number": "",
+        "totp_enabled": "",
+        "totp_enrolled": "",
+        "supervisor": "",
+        "personal_desktop": "",
+        "enrolled": "",
+        "email_enrolled": "",
+        "sms_enrolled": "",
+        "allowed_idps": "",
+        "labels": [],
+        "last_login": "",
+        "must_change_password": ""
+      },
+      "enabled": true
+    },
+    {
+      "title": "Delete User By ID Or Name",
+      "description": "Deletes the user details based on the ID or name provided.",
+      "operation": "delete_user_by_id_or_name",
+      "category": "investigation",
+      "annotation": "delete_user_by_id_or_name",
+      "parameters": [
+        {
+          "title": "User ID Or Name",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Specify the user ID or name to retrieve its details",
+          "name": "id"
+        }
+      ],
+      "output_schema": {
+        "status": "",
+        "result": ""
+      },
+      "enabled": true
+    },
+    {
+      "title": "Get Policy List",
+      "description": "Retrieves the policy list from the Cyolo",
+      "operation": "list_policies",
+      "category": "investigation",
+      "annotation": "list_policies",
+      "parameters": [],
+      "output_schema": [
+        {
+          "id": "",
+          "kind": "",
+          "name": "",
+          "system": "",
+          "ctime": "",
+          "mtime": "",
+          "enabled": "",
+          "mappings": [
+            {
+              "id": "",
+              "kind": "",
+              "name": "",
+              "system": "",
+              "ctime": "",
+              "mtime": "",
+              "enabled": "",
+              "external": "",
+              "domain": "",
+              "internal": "",
+              "port": "",
+              "protocol": "",
+              "sso": {
+                "id": "",
+                "name": "",
+                "display_name": ""
+              },
+              "sso_forms_tpl": "",
+              "sso_forms_url": "",
+              "sso_credentials_origin": "",
+              "insecure_skip_verify": "",
+              "sso_headers": {},
+              "sso_home_dir": "",
+              "app_icon": "",
+              "initial_program": "",
+              "sso_forms_scrape_url": "",
+              "sso_vault_id": "",
+              "site": "",
+              "user_visible": "",
+              "properties": [],
+              "sso_form_matchers": {
+                "pre": {},
+                "post": {}
+              },
+              "saas_cert": ""
+            }
+          ],
+          "users": [
+            {
+              "id": "",
+              "kind": "",
+              "name": "",
+              "system": "",
+              "ctime": "",
+              "mtime": "",
+              "enabled": "",
+              "email": "",
+              "phone_number": "",
+              "totp_enabled": "",
+              "totp_enrolled": "",
+              "supervisor": "",
+              "personal_desktop": "",
+              "enrolled": "",
+              "email_enrolled": "",
+              "sms_enrolled": "",
+              "allowed_idps": "",
+              "labels": [],
+              "last_login": "",
+              "must_change_password": ""
+            }
+          ],
+          "capabilities": [],
+          "constraints": [
+            {
+              "constraint_id": "",
+              "value": ""
+            }
+          ],
+          "supervisors": [],
+          "webhooks": [],
+          "simple_groups": [],
+          "dynamic_groups": [],
+          "mapping_categories": [],
+          "timed_access": "",
+          "trusted_certificates": [],
+          "device_posture_profile_ids": [],
+          "group_supervisors": []
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Policy By ID Or Name",
+      "description": "Retrieves the policy details based on the ID or name provided from the Cyolo",
+      "operation": "get_policy_by_id_or_name",
+      "category": "investigation",
+      "annotation": "get_policy_by_id_or_name",
+      "parameters": [
+        {
+          "title": "Policy ID Or Name",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Specify the policy ID or name to retrieve its details",
+          "name": "id"
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "kind": "",
+        "name": "",
+        "system": "",
+        "ctime": "",
+        "mtime": "",
+        "enabled": "",
+        "mappings": [
+          {
+            "id": "",
+            "kind": "",
+            "name": "",
+            "system": "",
+            "ctime": "",
+            "mtime": "",
+            "enabled": "",
+            "external": "",
+            "domain": "",
+            "internal": "",
+            "port": "",
+            "protocol": "",
+            "sso": {
+              "id": "",
+              "name": "",
+              "display_name": ""
+            },
+            "sso_forms_tpl": "",
+            "sso_forms_url": "",
+            "sso_credentials_origin": "",
+            "insecure_skip_verify": "",
+            "sso_headers": {},
+            "sso_home_dir": "",
+            "app_icon": "",
+            "initial_program": "",
+            "sso_forms_scrape_url": "",
+            "sso_vault_id": "",
+            "site": "",
+            "user_visible": "",
+            "properties": [],
+            "sso_form_matchers": {
+              "pre": {},
+              "post": {}
+            },
+            "saas_cert": ""
+          }
+        ],
+        "mapping_categories": [],
+        "users": [
+          {
+            "id": "",
+            "kind": "",
+            "name": "",
+            "system": "",
+            "ctime": "",
+            "mtime": "",
+            "enabled": "",
+            "email": "",
+            "phone_number": "",
+            "totp_enabled": "",
+            "totp_enrolled": "",
+            "supervisor": "",
+            "personal_desktop": "",
+            "enrolled": "",
+            "email_enrolled": "",
+            "sms_enrolled": "",
+            "allowed_idps": "",
+            "labels": [],
+            "last_login": "",
+            "must_change_password": ""
+          }
+        ],
+        "capabilities": [],
+        "constraints": [
+          {
+            "constraint_id": "",
+            "value": ""
+          }
+        ],
+        "supervisors": [],
+        "webhooks": [],
+        "device_posture_profiles": [],
+        "groups": [],
+        "timed_access": "",
+        "trusted_certificates": [],
+        "group_supervisors": []
+      },
+      "enabled": true
+    },
+    {
+      "title": "Get Simple Group List",
+      "description": "Retrieves the simple group list from the Cyolo",
+      "operation": "list_simple_groups",
+      "category": "investigation",
+      "annotation": "list_simple_groups",
+      "parameters": [],
+      "output_schema": [
+        {
+          "id": "",
+          "kind": "",
+          "name": "",
+          "system": "",
+          "ctime": "",
+          "mtime": "",
+          "enabled": "",
+          "users": []
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Dynamic Group List",
+      "description": "Retrieves the dynamic group list from the Cyolo",
+      "operation": "list_dynamic_groups",
+      "category": "investigation",
+      "annotation": "list_dynamic_groups",
+      "parameters": [],
+      "output_schema": [
+        {
+          "query_type": "",
+          "query": "",
+          "expected_value_type": "",
+          "expected_value": "",
+          "id": "",
+          "idp": {
+            "id": "",
+            "name": "",
+            "idp_kind": "",
+            "idp_id": ""
+          },
+          "enabled": "",
+          "name": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Constraints List",
+      "description": "Retrieves the constraints list from the Cyolo",
+      "operation": "list_constraints",
+      "category": "investigation",
+      "annotation": "list_constraints",
+      "parameters": [],
+      "output_schema": [
+        {
+          "constraint_id": "",
+          "name": "",
+          "type": "",
+          "label": "",
+          "default_value": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Capabilities List",
+      "description": "Retrieves the capabilities list from the Cyolo",
+      "operation": "list_capabilities",
+      "category": "investigation",
+      "annotation": "list_capabilities",
+      "parameters": [],
+      "output_schema": [
+        {
+          "capability_id": "",
+          "name": "",
+          "protocols": [],
+          "type": "",
+          "label": "",
+          "default_value": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Mappings List",
+      "description": "Retrieves the mappings/applications list from the Cyolo",
+      "operation": "list_mappings",
+      "category": "investigation",
+      "annotation": "list_mappings",
+      "parameters": [],
+      "output_schema": [
+        {
+          "id": "",
+          "kind": "",
+          "name": "",
+          "system": "",
+          "ctime": "",
+          "mtime": "",
+          "enabled": "",
+          "external": "",
+          "domain": "",
+          "internal": "",
+          "port": "",
+          "protocol": "",
+          "sso": {
+            "id": "",
+            "name": "",
+            "display_name": ""
+          },
+          "sso_forms_tpl": "",
+          "sso_forms_url": "",
+          "sso_credentials_origin": "",
+          "insecure_skip_verify": "",
+          "sso_headers": {},
+          "sso_home_dir": "",
+          "app_icon": "",
+          "initial_program": "",
+          "sso_forms_scrape_url": "",
+          "sso_vault_id": "",
+          "site": "",
+          "user_visible": "",
+          "properties": [],
+          "sso_form_matchers": {
+            "pre": {},
+            "post": {}
+          },
+          "saas_cert": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Webhooks List",
+      "description": "Retrieves the webhooks (user-defined HTTP callbacks) list from the Cyolo",
+      "operation": "list_webhooks",
+      "category": "investigation",
+      "annotation": "list_webhooks",
+      "parameters": [],
+      "output_schema": [
+        {
+          "id": "",
+          "kind": "",
+          "name": "",
+          "system": "",
+          "ctime": "",
+          "mtime": "",
+          "enabled": "",
+          "url": "",
+          "body": "",
+          "method": "",
+          "content_type": "",
+          "auth_method": "",
+          "credentials": [],
+          "predicates": [
+            {
+              "subject": "",
+              "adjective": "",
+              "type": ""
+            }
+          ]
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Device Posture Profiles List",
+      "description": "Retrieves the device posture profiles (conditions that users' devices must meet in order to access resources.) list from the Cyolo",
+      "operation": "list_device_posture_profiles",
+      "category": "investigation",
+      "annotation": "list_device_posture_profiles",
+      "parameters": [],
+      "output_schema": [
+        {
+          "id": "",
+          "kind": "",
+          "name": "",
+          "system": "",
+          "ctime": "",
+          "mtime": "",
+          "enabled": "",
+          "predicates": [
+            {
+              "id": "",
+              "operator": "",
+              "value": "",
+              "check": {
+                "id": "",
+                "name": "",
+                "category": "",
+                "os": "",
+                "label": "",
+                "description": "",
+                "selector": ""
+              },
+              "parameter": "",
+              "os": ""
+            }
+          ],
+          "description": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Mapping Categories List",
+      "description": "Retrieves the mapping categories list from the Cyolo",
+      "operation": "list_mapping_categories",
+      "category": "investigation",
+      "annotation": "list_mapping_categories",
+      "parameters": [],
+      "output_schema": [
+        {
+          "id": "",
+          "name": "",
+          "color_hex": "",
+          "global": "",
+          "mappings": [
+            {
+              "id": "",
+              "kind": "",
+              "name": "",
+              "system": "",
+              "ctime": "",
+              "mtime": "",
+              "enabled": "",
+              "external": "",
+              "domain": "",
+              "internal": "",
+              "port": "",
+              "protocol": "",
+              "sso": {
+                "id": "",
+                "name": "",
+                "display_name": ""
+              },
+              "sso_forms_tpl": "",
+              "sso_forms_url": "",
+              "sso_credentials_origin": "",
+              "insecure_skip_verify": "",
+              "sso_headers": {},
+              "sso_home_dir": "",
+              "app_icon": "",
+              "initial_program": "",
+              "sso_forms_scrape_url": "",
+              "sso_vault_id": "",
+              "site": "",
+              "user_visible": "",
+              "properties": [
+                {
+                  "mapping_attribute_id": "",
+                  "value": {}
+                },
+                {
+                  "mapping_attribute_id": "",
+                  "value": {}
+                }
+              ],
+              "sso_form_matchers": {
+                "pre": {},
+                "post": {}
+              },
+              "saas_cert": ""
+            }
+          ],
+          "ctime": "",
+          "mtime": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Certificates List",
+      "description": "Retrieves the certificates list from the Cyolo",
+      "operation": "list_certificates",
+      "category": "investigation",
+      "annotation": "list_certificates",
+      "parameters": [],
+      "output_schema": [],
+      "enabled": true
+    },
+    {
+      "title": "Create Policy",
+      "description": "Creates a policy in the cyolo based on the parameters provided.",
+      "operation": "create_policy",
+      "category": "investigation",
+      "annotation": "create_policy",
+      "parameters": [
+        {
+          "title": "Name",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Specify the name of the policy",
+          "name": "name"
+        },
+        {
+          "title": "Enabled",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "tooltip": "Specify whether to enable on disable the policy",
+          "description": "Specify whether to enable on disable the policy",
+          "name": "enabled"
+        },
+        {
+          "title": "Dynamic Groups",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the dynamic groups IDs which you want to assign to the policy. You can specify multiple dynamic group IDs as comma-separated values.",
+          "description": "Specify the dynamic groups IDs which you want to assign to the policy. You can specify multiple dynamic group IDs as comma-separated values.",
+          "name": "dynamic_groups"
+        },
+        {
+          "title": "Simple Groups",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the simple groups IDs which you want to assign to the policy. You can specify multiple simple group IDs as comma-separated values.",
+          "description": "Specify the simple groups IDs which you want to assign to the policy. You can specify multiple simple group IDs as comma-separated values.",
+          "name": "simple_groups"
+        },
+        {
+          "title": "Applications",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the mapping/application IDs which you want to assign to the policy. You can specify multiple mapping/application IDs as comma-separated values.",
+          "description": "Specify the mapping/application IDs which you want to assign to the policy. You can specify multiple mapping/application IDs as comma-separated values.",
+          "name": "mappings"
+        },
+        {
+          "title": "Application Categories",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the mapping category IDs which you want to assign to the policy. You can specify multiple mapping category IDs as comma-separated values.",
+          "description": "Specify the mapping category IDs which you want to assign to the policy. You can specify multiple mapping category IDs as comma-separated values.",
+          "name": "mapping_categories"
+        },
+        {
+          "title": "Supervisors",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the supervisors IDs which you want to assign to the policy. You can specify multiple supervisors IDs as comma-separated values.",
+          "description": "Specify the supervisors IDs which you want to assign to the policy. You can specify multiple supervisors IDs as comma-separated values.",
+          "name": "supervisors"
+        },
+        {
+          "title": "Users",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the User IDs which you want to assign to the policy. You can specify multiple user IDs as comma-separated values.",
+          "description": "Specify the User IDs which you want to assign to the policy. You can specify multiple user IDs as comma-separated values.",
+          "name": "users"
+        },
+        {
+          "title": "Webhooks",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the webhooks IDs which you want to associate with the policy. You can specify multiple webhooks IDs as comma-separated values.",
+          "description": "Specify the webhooks IDs which you want to associate with the policy. You can specify multiple webhooks IDs as comma-separated values.",
+          "name": "webhooks"
+        },
+        {
+          "title": "Enable Time Access",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "tooltip": "Specify whether you want to enable Timed Access or not",
+          "description": "Specify whether you want to enable Timed Access or not",
+          "name": "timed_access_status"
+        },
+        {
+          "title": "Start",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "tooltip": "Specify the start time for the policy to be applicable.",
+          "description": "Specify the start time for the policy to be applicable.",
+          "name": "start"
+        },
+        {
+          "title": "End",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "tooltip": "Specify the end time for the policy to be applicable.",
+          "description": "Specify the end time for the policy to be applicable.",
+          "name": "end"
+        },
+        {
+          "title": "Days",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "tooltip": "Specify the days on which the policy will be applicable.",
+          "description": "Specify the days on which the policy will be applicable.",
+          "name": "days",
+          "options": [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ]
+        },
+        {
+          "title": "Trusted Certificates",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the trusted certificates IDs which you want to associate with the policy. You can specify multiple trusted certificates IDs as comma-separated values.",
+          "description": "Specify the trusted certificates IDs which you want to associate with the policy. You can specify multiple trusted certificates IDs as comma-separated values.",
+          "name": "trusted_certificates"
+        },
+        {
+          "title": "Device Posture Profiles",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the device posture profiles IDs which you want to associate with the policy. You can specify multiple device posture profiles IDs as comma-separated values.",
+          "description": "Specify the device posture profiles IDs which you want to associate with the policy. You can specify multiple device posture profiles IDs as comma-separated values.",
+          "name": "device_posture_profiles"
+        },
+        {
+          "title": "Capabilities",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "tooltip": "Specify the list of capabilities which you want to associate with the policy. e.g: [\n        {\n            \"capability_id\": \"11\",\n            \"value\": true\n        },\n        {\n            \"capability_id\": \"12\",\n            \"value\": true\n        }]",
+          "description": "Specify the list of capabilities which you want to associate with the policy. e.g: [\n        {\n            \"capability_id\": \"11\",\n            \"value\": true\n        },\n        {\n            \"capability_id\": \"12\",\n            \"value\": true\n        }]",
+          "name": "capabilities"
+        },
+        {
+          "title": "Constraints",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "tooltip": "Specify the list of constraints which you want to associate with the policy. e.g: [\n        {\n            \"constraint_id\": \"2\",\n            \"value\": true\n        },\n        {\n            \"constraint_id\": \"3\",\n            \"value\": \"1\"\n        }]",
+          "description": "Specify the list of constraints which you want to associate with the policy. e.g: [\n        {\n            \"constraint_id\": \"2\",\n            \"value\": true\n        },\n        {\n            \"constraint_id\": \"3\",\n            \"value\": \"1\"\n        }]",
+          "name": "constraints"
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "kind": "",
+        "name": "",
+        "system": "",
+        "ctime": "",
+        "mtime": "",
+        "enabled": "",
+        "mappings": [
+          {
+            "id": "",
+            "kind": "",
+            "name": "",
+            "system": "",
+            "ctime": "",
+            "mtime": "",
+            "enabled": "",
+            "external": "",
+            "domain": "",
+            "internal": "",
+            "port": "",
+            "protocol": "",
+            "sso": {
+              "id": "",
+              "name": "",
+              "display_name": ""
+            },
+            "sso_forms_tpl": "",
+            "sso_forms_url": "",
+            "sso_credentials_origin": "",
+            "insecure_skip_verify": "",
+            "sso_headers": {},
+            "sso_home_dir": "",
+            "app_icon": "",
+            "initial_program": "",
+            "sso_forms_scrape_url": "",
+            "sso_vault_id": "",
+            "site": "",
+            "user_visible": "",
+            "properties": [
+              {
+                "mapping_attribute_id": "",
+                "value": {}
+              },
+              {
+                "mapping_attribute_id": "",
+                "value": {}
+              }
+            ],
+            "sso_form_matchers": {
+              "pre": {},
+              "post": {}
+            },
+            "saas_cert": ""
+          }
+        ],
+        "users": [
+          {
+            "id": "",
+            "kind": "",
+            "name": "",
+            "system": "",
+            "ctime": "",
+            "mtime": "",
+            "enabled": "",
+            "email": "",
+            "phone_number": "",
+            "totp_enabled": "",
+            "totp_enrolled": "",
+            "supervisor": "",
+            "personal_desktop": "",
+            "enrolled": "",
+            "email_enrolled": "",
+            "sms_enrolled": "",
+            "allowed_idps": [
+              {
+                "id": "",
+                "name": "",
+                "idp_kind": "",
+                "idp_id": ""
+              }
+            ],
+            "labels": [],
+            "last_login": "",
+            "must_change_password": ""
+          }
+        ],
+        "capabilities": [
+          {
+            "capability_id": "",
+            "value": ""
+          }
+        ],
+        "constraints": [
+          {
+            "constraint_id": "",
+            "value": ""
+          }
+        ],
+        "supervisors": [
+          {
+            "id": "",
+            "kind": "",
+            "name": "",
+            "system": "",
+            "ctime": "",
+            "mtime": "",
+            "enabled": "",
+            "email": "",
+            "phone_number": "",
+            "totp_enabled": "",
+            "totp_enrolled": "",
+            "supervisor": "",
+            "personal_desktop": "",
+            "enrolled": "",
+            "email_enrolled": "",
+            "sms_enrolled": "",
+            "allowed_idps": [
+              {
+                "id": "",
+                "name": "",
+                "idp_kind": "",
+                "idp_id": ""
+              }
+            ],
+            "labels": [],
+            "last_login": "",
+            "must_change_password": ""
+          }
+        ],
+        "webhooks": [
+          {
+            "id": "",
+            "kind": "",
+            "name": "",
+            "system": "",
+            "ctime": "",
+            "mtime": "",
+            "enabled": "",
+            "url": "",
+            "body": "",
+            "method": "",
+            "content_type": "",
+            "auth_method": "",
+            "credentials": [],
+            "predicates": [
+              {
+                "subject": "",
+                "adjective": "",
+                "type": ""
+              }
+            ]
+          }
+        ],
+        "simple_groups": [
+          {
+            "id": "",
+            "kind": "",
+            "name": "",
+            "system": "",
+            "ctime": "",
+            "mtime": "",
+            "enabled": "",
+            "users": []
+          }
+        ],
+        "dynamic_groups": [
+          {
+            "query_type": "",
+            "query": "",
+            "expected_value_type": "",
+            "expected_value": "",
+            "id": "",
+            "idp": {
+              "id": "",
+              "name": "",
+              "idp_kind": "",
+              "idp_id": ""
+            },
+            "enabled": "",
+            "name": ""
+          }
+        ],
+        "mapping_categories": [
+          {
+            "id": "",
+            "name": "",
+            "color_hex": "",
+            "global": "",
+            "mappings": [
+              {
+                "id": "",
+                "kind": "",
+                "name": "",
+                "system": "",
+                "ctime": "",
+                "mtime": "",
+                "enabled": "",
+                "external": "",
+                "domain": "",
+                "internal": "",
+                "port": "",
+                "protocol": "",
+                "sso": {
+                  "id": "",
+                  "name": "",
+                  "display_name": ""
+                },
+                "sso_forms_tpl": "",
+                "sso_forms_url": "",
+                "sso_credentials_origin": "",
+                "insecure_skip_verify": "",
+                "sso_headers": {},
+                "sso_home_dir": "",
+                "app_icon": "",
+                "initial_program": "",
+                "sso_forms_scrape_url": "",
+                "sso_vault_id": "",
+                "site": "",
+                "user_visible": "",
+                "properties": [
+                  {
+                    "mapping_attribute_id": "",
+                    "value": {}
+                  }
+                ],
+                "sso_form_matchers": {
+                  "pre": {},
+                  "post": {}
+                },
+                "saas_cert": ""
+              }
+            ],
+            "ctime": "",
+            "mtime": ""
+          }
+        ],
+        "timed_access": {
+          "enabled": "",
+          "start": "",
+          "end": "",
+          "days": []
+        },
+        "trusted_certificates": [],
+        "device_posture_profile_ids": [],
+        "group_supervisors": []
+      },
+      "enabled": true
+    },
+    {
+      "title": "Update Policy",
+      "description": "Update a policy in the cyolo based on the parameters provided.",
+      "operation": "update_policy",
+      "category": "investigation",
+      "annotation": "update_policy",
+      "parameters": [
+        {
+          "title": "Policy ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Specify the policy ID to update its details",
+          "name": "id"
+        },
+        {
+          "title": "Name",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Specify the name of the policy",
+          "name": "name"
+        },
+        {
+          "title": "Enabled",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "description": "Specify whether to enable on disable the policy",
+          "name": "enabled"
+        },
+        {
+          "title": "Dynamic Groups",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the dynamic groups IDs which you want to assign to the policy. You can specify multiple dynamic group IDs as comma-separated values.",
+          "description": "Specify the dynamic groups IDs which you want to assign to the policy. You can specify multiple dynamic group IDs as comma-separated values.",
+          "placeholder": "id1, id2, id3",
+          "name": "dynamic_groups"
+        },
+        {
+          "title": "Simple Groups",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the simple groups IDs which you want to assign to the policy. You can specify multiple simple group IDs as comma-separated values.",
+          "description": "Specify the simple groups IDs which you want to assign to the policy. You can specify multiple simple group IDs as comma-separated values.",
+          "name": "simple_groups",
+          "placeholder": "id1, id2, id3"
+        },
+        {
+          "title": "Application",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the mapping/application IDs which you want to assign to the policy. You can specify multiple mapping/application IDs as comma-separated values.",
+          "description": "Specify the mapping/application IDs which you want to assign to the policy. You can specify multiple mapping/application IDs as comma-separated values.",
+          "name": "mappings",
+          "placeholder": "id1, id2, id3"
+        },
+        {
+          "title": "Application Categories",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the mapping category IDs which you want to assign to the policy. You can specify multiple mapping category IDs as comma-separated values.",
+          "description": "Specify the mapping category IDs which you want to assign to the policy. You can specify multiple mapping category IDs as comma-separated values.",
+          "name": "mapping_categories",
+          "placeholder": "id1, id2, id3"
+        },
+        {
+          "title": "Supervisors",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the supervisors IDs which you want to assign to the policy. You can specify multiple supervisors IDs as comma-separated values.",
+          "description": "Specify the supervisors IDs which you want to assign to the policy. You can specify multiple supervisors IDs as comma-separated values.",
+          "name": "supervisors",
+          "placeholder": "id1, id2, id3"
+        },
+        {
+          "title": "Users",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the User IDs which you want to assign to the policy. You can specify multiple user IDs as comma-separated values.",
+          "description": "Specify the User IDs which you want to assign to the policy. You can specify multiple user IDs as comma-separated values.",
+          "name": "users",
+          "placeholder": "id1, id2, id3"
+        },
+        {
+          "title": "Webhooks",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the webhooks IDs which you want to associate with the policy. You can specify multiple webhooks IDs as comma-separated values.",
+          "description": "Specify the webhooks IDs which you want to associate with the policy. You can specify multiple webhooks IDs as comma-separated values.",
+          "name": "webhooks",
+          "placeholder": "id1, id2, id3"
+        },
+        {
+          "title": "Enable Time Access",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "tooltip": "Specify whether you want to enable Timed Access or not",
+          "description": "Specify whether you want to enable Timed Access or not",
+          "name": "timed_access_status"
+        },
+        {
+          "title": "Start",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "tooltip": "Specify the start time for the policy to be applicable.",
+          "description": "Specify the start time for the policy to be applicable.",
+          "name": "start"
+        },
+        {
+          "title": "End",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "tooltip": "Specify the end time for the policy to be applicable.",
+          "description": "Specify the end time for the policy to be applicable.",
+          "name": "end"
+        },
+        {
+          "title": "Days",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "tooltip": "Specify the days on which the policy will be applicable.",
+          "description": "Specify the days on which the policy will be applicable.",
+          "name": "days",
+          "options": [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ]
+        },
+        {
+          "title": "Trusted Certificates",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the trusted certificates IDs which you want to associate with the policy. You can specify multiple trusted certificates IDs as comma-separated values.",
+          "description": "Specify the trusted certificates IDs which you want to associate with the policy. You can specify multiple trusted certificates IDs as comma-separated values.",
+          "name": "trusted_certificates",
+          "placeholder": "id1, id2, id3"
+        },
+        {
+          "title": "Device Posture Profiles",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the device posture profiles IDs which you want to associate with the policy. You can specify multiple device posture profiles IDs as comma-separated values.",
+          "description": "Specify the device posture profiles IDs which you want to associate with the policy. You can specify multiple device posture profiles IDs as comma-separated values.",
+          "name": "device_posture_profiles",
+          "placeholder": "id1, id2, id3"
+        },
+        {
+          "title": "Capabilities",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "tooltip": "Specify the list of capabilities which you want to associate with the policy. e.g: [\n        {\n            \"capability_id\": \"11\",\n            \"value\": true\n        },\n        {\n            \"capability_id\": \"12\",\n            \"value\": true\n        }]",
+          "description": "Specify the list of capabilities which you want to associate with the policy. e.g: [\n        {\n            \"capability_id\": \"11\",\n            \"value\": true\n        },\n        {\n            \"capability_id\": \"12\",\n            \"value\": true\n        }]",
+          "name": "capabilities"
+        },
+        {
+          "title": "Constraints",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "tooltip": "Specify the list of constraints which you want to associate with the policy. e.g: [\n        {\n            \"constraint_id\": \"2\",\n            \"value\": true\n        },\n        {\n            \"constraint_id\": \"3\",\n            \"value\": \"1\"\n        }]",
+          "description": "Specify the list of constraints which you want to associate with the policy. e.g: [\n        {\n            \"constraint_id\": \"2\",\n            \"value\": true\n        },\n        {\n            \"constraint_id\": \"3\",\n            \"value\": \"1\"\n        }]",
+          "name": "constraints"
+        }
+      ],
+      "output_schema": {
+        "status": ""
+      },
+      "enabled": true
+    },
+    {
+      "title": "Delete User From Policy",
+      "description": "Deletes user from policy based on the ID(s) of the user provided.",
+      "operation": "delete_user_from_policy",
+      "category": "investigation",
+      "annotation": "delete_user_from_policy",
+      "parameters": [
+        {
+          "title": "Policy ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Specify the policy ID from which you want to delete users.",
+          "name": "id"
+        },
+        {
+          "title": "Users",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the User IDs which you want to assign to the policy. You can specify multiple user IDs as comma-separated values.",
+          "description": "Specify the User IDs which you want to assign to the policy. You can specify multiple user IDs as comma-separated values.",
+          "name": "users",
+          "placeholder": "id1, id2, id3"
+        }
+      ],
+      "output_schema": {
+        "status": ""
+      },
+      "enabled": true
+    }
+  ]
+}
