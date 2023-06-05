@@ -1400,8 +1400,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the User IDs which you want to assign to the policy. You can specify multiple user IDs as comma-separated values.",
-          "description": "Specify the User IDs which you want to assign to the policy. You can specify multiple user IDs as comma-separated values.",
+          "tooltip": "Specify the User IDs which you want to remove from the policy. You can specify multiple user IDs as comma-separated values.",
+          "description": "Specify the User IDs which you want to remove from the policy. You can specify multiple user IDs as comma-separated values.",
           "name": "users",
           "placeholder": "id1, id2, id3"
         }

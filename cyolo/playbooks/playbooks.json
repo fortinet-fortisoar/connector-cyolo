@@ -2,7 +2,7 @@
   "type": "workflow_collections",
   "data": [
     {
-      "uuid": "19e8e928-78c2-4028-a133-e48e11d6726c",
+      "uuid": "6a958a61-de37-435c-9d9c-8bef906a266f",
       "@type": "WorkflowCollection",
       "name": "Sample - Cyolo - 1.0.0",
       "description": "Cyolo helps enterprises provide their global workforce with convenient and secure access to applications, resources, workstations, servers, and files, regardless of location or device used.",
@@ -15,8 +15,8 @@
       "workflows": [
         {
           "@type": "Workflow",
-          "uuid": "b1f2c056-37d8-4e35-b99c-a9ca77f0fe49",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "e31e4322-3a9e-40e4-808d-cbae118073fe",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Retrieves a list of users from Cyolo",
           "name": "Get Users List",
@@ -30,16 +30,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/b0f0d018-19ba-44ae-96f1-23be5c888c1e",
+          "triggerStep": "/api/3/workflow_steps/e5c5c336-cf53-4bd5-9a19-898da65d8edc",
           "steps": [
             {
-              "uuid": "b0f0d018-19ba-44ae-96f1-23be5c888c1e",
+              "uuid": "e5c5c336-cf53-4bd5-9a19-898da65d8edc",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "77e2455e-e69c-401b-b8c0-c7e39a0e2ef0",
+                "route": "b0a45790-e7f2-4227-ab01-a57d544dd7b0",
                 "title": "Cyolo: Get Users List",
                 "resources": [
                   "alerts"
@@ -59,7 +59,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "c4832a75-5739-4bdc-aa4c-b84aa23ceb4c",
+              "uuid": "2ac962ca-dcb9-4c56-b37f-16b13cf321bd",
               "@type": "WorkflowStep",
               "name": "Get Users List",
               "description": null,
@@ -84,19 +84,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "70c2ce66-169c-4c2f-96c2-1ada97f7a3e3",
+              "uuid": "a365b6ff-a1fe-41d6-a44a-7d9983135428",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Users List",
-              "sourceStep": "/api/3/workflow_steps/b0f0d018-19ba-44ae-96f1-23be5c888c1e",
-              "targetStep": "/api/3/workflow_steps/c4832a75-5739-4bdc-aa4c-b84aa23ceb4c"
+              "sourceStep": "/api/3/workflow_steps/e5c5c336-cf53-4bd5-9a19-898da65d8edc",
+              "targetStep": "/api/3/workflow_steps/2ac962ca-dcb9-4c56-b37f-16b13cf321bd"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "f71aa9eb-b25d-4aab-a76d-50c002a10a02",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "f0ecd7ee-54dc-47d7-a214-05b443416da3",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Retrieves the list of policies associated with the user based on the user ID provided",
           "name": "Get User Policies",
@@ -110,16 +110,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/4c2ed4d4-781d-4cac-9120-7df90d5ea6bb",
+          "triggerStep": "/api/3/workflow_steps/f29f23c6-fdd8-4ef3-b712-b89b73fee3b7",
           "steps": [
             {
-              "uuid": "4c2ed4d4-781d-4cac-9120-7df90d5ea6bb",
+              "uuid": "f29f23c6-fdd8-4ef3-b712-b89b73fee3b7",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "25604f4c-8cd6-43ec-92aa-a3d604644ee3",
+                "route": "0f54f2e6-4ea4-4190-b3bc-bf4c4bf0146d",
                 "title": "Cyolo: Get User Policies",
                 "resources": [
                   "alerts"
@@ -139,7 +139,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "24ac9fd0-f88a-44e2-a369-dd740ce6ab0d",
+              "uuid": "dcf07f34-13cf-4fc3-8579-61aefa146b17",
               "@type": "WorkflowStep",
               "name": "Get User Policies",
               "description": null,
@@ -164,19 +164,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "8e5616fe-92b9-4645-a420-0432339f4db4",
+              "uuid": "3604dfe2-9ac6-45c0-a555-958b3f367eb7",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get User Policies",
-              "sourceStep": "/api/3/workflow_steps/4c2ed4d4-781d-4cac-9120-7df90d5ea6bb",
-              "targetStep": "/api/3/workflow_steps/24ac9fd0-f88a-44e2-a369-dd740ce6ab0d"
+              "sourceStep": "/api/3/workflow_steps/f29f23c6-fdd8-4ef3-b712-b89b73fee3b7",
+              "targetStep": "/api/3/workflow_steps/dcf07f34-13cf-4fc3-8579-61aefa146b17"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "7f76177d-a5c5-4871-aad7-0f6424b35555",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "2790b05d-587c-4872-9b52-57fefa12f0a9",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Retrieves the user details based on the ID or name provided.",
           "name": "Get User By ID Or Name",
@@ -190,16 +190,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/6eb24f39-1b3a-46f4-8a7a-f034b9a69f7e",
+          "triggerStep": "/api/3/workflow_steps/c292fcb7-8f9e-4a9a-a135-939ce4c2a1a3",
           "steps": [
             {
-              "uuid": "6eb24f39-1b3a-46f4-8a7a-f034b9a69f7e",
+              "uuid": "c292fcb7-8f9e-4a9a-a135-939ce4c2a1a3",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "409cae8a-6043-4172-8586-9b003d5af219",
+                "route": "07dc279a-50d3-4be2-8f3a-cad4e630e7a6",
                 "title": "Cyolo: Get User By ID Or Name",
                 "resources": [
                   "alerts"
@@ -219,7 +219,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "5de16677-a819-45b9-a7d3-0018bd2c682c",
+              "uuid": "cc065f0d-d376-4e98-b993-53d0e8a1814d",
               "@type": "WorkflowStep",
               "name": "Get User By ID Or Name",
               "description": null,
@@ -244,19 +244,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "e8ca3d23-14c8-49bd-97ba-d5e06700bbcb",
+              "uuid": "bedc3688-7a2a-4aae-a468-90e81a82f787",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get User By ID Or Name",
-              "sourceStep": "/api/3/workflow_steps/6eb24f39-1b3a-46f4-8a7a-f034b9a69f7e",
-              "targetStep": "/api/3/workflow_steps/5de16677-a819-45b9-a7d3-0018bd2c682c"
+              "sourceStep": "/api/3/workflow_steps/c292fcb7-8f9e-4a9a-a135-939ce4c2a1a3",
+              "targetStep": "/api/3/workflow_steps/cc065f0d-d376-4e98-b993-53d0e8a1814d"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "ac4a72f9-ef7a-4076-8734-539e7751618c",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "071e9ca7-91a4-47ef-864d-a17cb8611953",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Deletes the user details based on the ID or name provided.",
           "name": "Delete User By ID Or Name",
@@ -270,16 +270,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/cf0fb89c-ad79-4864-bd58-0ea3f6730786",
+          "triggerStep": "/api/3/workflow_steps/18f4e0a4-576e-4549-9f74-91e94a612dec",
           "steps": [
             {
-              "uuid": "cf0fb89c-ad79-4864-bd58-0ea3f6730786",
+              "uuid": "18f4e0a4-576e-4549-9f74-91e94a612dec",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "075131a4-5068-4e82-9497-a5aec4d88887",
+                "route": "4d427e9a-7e97-43c1-839b-856f3622b16c",
                 "title": "Cyolo: Delete User By ID Or Name",
                 "resources": [
                   "alerts"
@@ -299,7 +299,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "53964256-8a77-4c93-933c-c957ce5a2219",
+              "uuid": "9b14d29a-82c3-43f8-9d5a-fb79909cbdc2",
               "@type": "WorkflowStep",
               "name": "Delete User By ID Or Name",
               "description": null,
@@ -324,19 +324,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "308c0acc-1263-44c3-8943-127f603ff7e1",
+              "uuid": "df3eb380-2653-4533-9748-42528c0ba863",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Delete User By ID Or Name",
-              "sourceStep": "/api/3/workflow_steps/cf0fb89c-ad79-4864-bd58-0ea3f6730786",
-              "targetStep": "/api/3/workflow_steps/53964256-8a77-4c93-933c-c957ce5a2219"
+              "sourceStep": "/api/3/workflow_steps/18f4e0a4-576e-4549-9f74-91e94a612dec",
+              "targetStep": "/api/3/workflow_steps/9b14d29a-82c3-43f8-9d5a-fb79909cbdc2"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "742ece76-0376-4346-92b4-7491be789dd6",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "0438cd68-e872-427d-955b-6028bebc8e2a",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Retrieves the policy list from the Cyolo",
           "name": "Get Policy List",
@@ -350,16 +350,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/40521e92-2a14-4d8a-acfe-db9731e90f6b",
+          "triggerStep": "/api/3/workflow_steps/ab8f4416-f88c-4a84-9f77-4812fc04aaa0",
           "steps": [
             {
-              "uuid": "40521e92-2a14-4d8a-acfe-db9731e90f6b",
+              "uuid": "ab8f4416-f88c-4a84-9f77-4812fc04aaa0",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "4319d1c7-c9e3-4c37-a316-d57a29488020",
+                "route": "c11b81c9-12f6-42b6-a585-2c5a53d97cc2",
                 "title": "Cyolo: Get Policy List",
                 "resources": [
                   "alerts"
@@ -379,7 +379,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "279ea755-ff63-4bd8-bfba-5aff783e93c4",
+              "uuid": "2f7ff90d-9f82-43b2-bb24-d43a3db842fd",
               "@type": "WorkflowStep",
               "name": "Get Policy List",
               "description": null,
@@ -404,19 +404,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "2759e7c0-1ce4-42c7-82b7-30ac192f4141",
+              "uuid": "829fb357-152e-433d-b027-047e790a157a",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Policy List",
-              "sourceStep": "/api/3/workflow_steps/40521e92-2a14-4d8a-acfe-db9731e90f6b",
-              "targetStep": "/api/3/workflow_steps/279ea755-ff63-4bd8-bfba-5aff783e93c4"
+              "sourceStep": "/api/3/workflow_steps/ab8f4416-f88c-4a84-9f77-4812fc04aaa0",
+              "targetStep": "/api/3/workflow_steps/2f7ff90d-9f82-43b2-bb24-d43a3db842fd"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "7a0dd687-2804-4759-ad00-8062bebc4140",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "3e4f99c8-3026-4a85-9564-c1eaf7ca4727",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Retrieves the policy details based on the ID or name provided from the Cyolo",
           "name": "Get Policy By ID Or Name",
@@ -430,16 +430,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/fa0cf4f1-7776-47d0-b230-5784d4bb22e1",
+          "triggerStep": "/api/3/workflow_steps/04361e29-912b-4614-8998-2532e23bbb90",
           "steps": [
             {
-              "uuid": "fa0cf4f1-7776-47d0-b230-5784d4bb22e1",
+              "uuid": "04361e29-912b-4614-8998-2532e23bbb90",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "64977be3-ee4a-4e6e-ae68-89dde70168e5",
+                "route": "1b92b0f1-ad5e-47c8-abd5-c59690f575fd",
                 "title": "Cyolo: Get Policy By ID Or Name",
                 "resources": [
                   "alerts"
@@ -459,7 +459,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "59886a05-28c7-4696-8c50-6dd658bc62ba",
+              "uuid": "a597ff33-3cda-4fd4-b8e4-c62356674fd7",
               "@type": "WorkflowStep",
               "name": "Get Policy By ID Or Name",
               "description": null,
@@ -484,19 +484,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "f3653407-7827-43c4-8388-fcb86a8e5d87",
+              "uuid": "19edc9d1-4c0d-4755-8edc-711dced2976d",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Policy By ID Or Name",
-              "sourceStep": "/api/3/workflow_steps/fa0cf4f1-7776-47d0-b230-5784d4bb22e1",
-              "targetStep": "/api/3/workflow_steps/59886a05-28c7-4696-8c50-6dd658bc62ba"
+              "sourceStep": "/api/3/workflow_steps/04361e29-912b-4614-8998-2532e23bbb90",
+              "targetStep": "/api/3/workflow_steps/a597ff33-3cda-4fd4-b8e4-c62356674fd7"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "a78520c7-10ec-4c5a-8591-19a0f2eebf5d",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "4dc0891a-7342-430b-9d3e-0b2a6d099393",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Retrieves the simple group list from the Cyolo",
           "name": "Get Simple Group List",
@@ -510,16 +510,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/c797e474-62f0-49c9-98c2-7ea95a8c2ab8",
+          "triggerStep": "/api/3/workflow_steps/6d7390bc-9ae6-48d2-9275-335941a9dcbf",
           "steps": [
             {
-              "uuid": "c797e474-62f0-49c9-98c2-7ea95a8c2ab8",
+              "uuid": "6d7390bc-9ae6-48d2-9275-335941a9dcbf",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "d2a697d3-d2f7-44c5-924d-92ea5e172380",
+                "route": "8682b1f0-a543-4a18-982a-4c9c633eef85",
                 "title": "Cyolo: Get Simple Group List",
                 "resources": [
                   "alerts"
@@ -539,7 +539,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "c31c1507-400b-42ec-ad0e-79dd9ba71942",
+              "uuid": "fd2e1f02-d38d-4c02-b21d-8e4494285555",
               "@type": "WorkflowStep",
               "name": "Get Simple Group List",
               "description": null,
@@ -564,19 +564,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "47acb9a7-81ec-466d-9cbe-8489833d9741",
+              "uuid": "bd90bbc2-ecfd-4d8f-8514-44c96dc2f18d",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Simple Group List",
-              "sourceStep": "/api/3/workflow_steps/c797e474-62f0-49c9-98c2-7ea95a8c2ab8",
-              "targetStep": "/api/3/workflow_steps/c31c1507-400b-42ec-ad0e-79dd9ba71942"
+              "sourceStep": "/api/3/workflow_steps/6d7390bc-9ae6-48d2-9275-335941a9dcbf",
+              "targetStep": "/api/3/workflow_steps/fd2e1f02-d38d-4c02-b21d-8e4494285555"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "06a9a49e-b830-4ffb-af1a-6347ab155c2e",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "c3222657-67de-4272-9191-18d64b99a986",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Retrieves the dynamic group list from the Cyolo",
           "name": "Get Dynamic Group List",
@@ -590,16 +590,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/6155d2fa-5fd8-4476-8c48-19e736084432",
+          "triggerStep": "/api/3/workflow_steps/33182149-c6aa-4cd5-b394-33342bdcbaf7",
           "steps": [
             {
-              "uuid": "6155d2fa-5fd8-4476-8c48-19e736084432",
+              "uuid": "33182149-c6aa-4cd5-b394-33342bdcbaf7",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "32729dbe-a02e-4da9-a979-808803ea8e14",
+                "route": "181965b7-72bd-46f8-ac76-206951610706",
                 "title": "Cyolo: Get Dynamic Group List",
                 "resources": [
                   "alerts"
@@ -619,7 +619,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "817fe793-8580-4eaa-808d-5dc0b696d3fd",
+              "uuid": "865effb2-b76d-4544-b8b9-bcfdb06fd537",
               "@type": "WorkflowStep",
               "name": "Get Dynamic Group List",
               "description": null,
@@ -644,19 +644,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "3f961e0d-817e-4f38-a14c-ce654620b283",
+              "uuid": "e10b2118-68c6-4dc2-bf68-eec0483e3e3b",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Dynamic Group List",
-              "sourceStep": "/api/3/workflow_steps/6155d2fa-5fd8-4476-8c48-19e736084432",
-              "targetStep": "/api/3/workflow_steps/817fe793-8580-4eaa-808d-5dc0b696d3fd"
+              "sourceStep": "/api/3/workflow_steps/33182149-c6aa-4cd5-b394-33342bdcbaf7",
+              "targetStep": "/api/3/workflow_steps/865effb2-b76d-4544-b8b9-bcfdb06fd537"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "ec4affa0-ea90-4850-9762-033cc28672a5",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "916606f5-2a17-49d3-a8c2-611c318bb99b",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Retrieves the constraints list from the Cyolo",
           "name": "Get Constraints List",
@@ -670,16 +670,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/1d4bae4e-85b8-4b0d-b789-28a28cfee641",
+          "triggerStep": "/api/3/workflow_steps/994ec677-b9aa-42f4-8b64-11bae8f073fb",
           "steps": [
             {
-              "uuid": "1d4bae4e-85b8-4b0d-b789-28a28cfee641",
+              "uuid": "994ec677-b9aa-42f4-8b64-11bae8f073fb",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "5be65cd9-0053-4636-9ce8-e007ae44815e",
+                "route": "95698393-a3c4-4f26-8ba9-488b00ef5fbb",
                 "title": "Cyolo: Get Constraints List",
                 "resources": [
                   "alerts"
@@ -699,7 +699,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "5b7d1799-f43d-4066-83ce-9ee10841a941",
+              "uuid": "6672a022-f726-4763-ab7b-e3b012b79c49",
               "@type": "WorkflowStep",
               "name": "Get Constraints List",
               "description": null,
@@ -724,19 +724,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "a32b2bc8-bbfa-4337-b9c2-da941d3c3f55",
+              "uuid": "962b7cb3-c043-4a49-8e1f-bf64a9be8ea7",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Constraints List",
-              "sourceStep": "/api/3/workflow_steps/1d4bae4e-85b8-4b0d-b789-28a28cfee641",
-              "targetStep": "/api/3/workflow_steps/5b7d1799-f43d-4066-83ce-9ee10841a941"
+              "sourceStep": "/api/3/workflow_steps/994ec677-b9aa-42f4-8b64-11bae8f073fb",
+              "targetStep": "/api/3/workflow_steps/6672a022-f726-4763-ab7b-e3b012b79c49"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "be94c16b-6dec-46e2-81d4-c7824bfc6b95",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "9c7a9dac-11a3-4258-8358-ad4bfeaa4ed5",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Retrieves the capabilities list from the Cyolo",
           "name": "Get Capabilities List",
@@ -750,16 +750,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/bba19bec-e52d-4333-9b22-6886a564ccb7",
+          "triggerStep": "/api/3/workflow_steps/b4bd6afd-6cf9-4387-b31f-99ccec91cef5",
           "steps": [
             {
-              "uuid": "bba19bec-e52d-4333-9b22-6886a564ccb7",
+              "uuid": "b4bd6afd-6cf9-4387-b31f-99ccec91cef5",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "3e470049-7c2c-45a0-a65e-1d380269420c",
+                "route": "f174bf74-e2ca-483a-90b9-d42d3405983b",
                 "title": "Cyolo: Get Capabilities List",
                 "resources": [
                   "alerts"
@@ -779,7 +779,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "a8663347-cf48-414e-9786-09b91ff6e013",
+              "uuid": "439363a5-6099-4519-a120-1e203fb7edd2",
               "@type": "WorkflowStep",
               "name": "Get Capabilities List",
               "description": null,
@@ -804,19 +804,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "1300bfce-1b00-43e9-bf58-5f7f8b514065",
+              "uuid": "0ed4328e-6f19-4d15-8010-a3679d11be0d",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Capabilities List",
-              "sourceStep": "/api/3/workflow_steps/bba19bec-e52d-4333-9b22-6886a564ccb7",
-              "targetStep": "/api/3/workflow_steps/a8663347-cf48-414e-9786-09b91ff6e013"
+              "sourceStep": "/api/3/workflow_steps/b4bd6afd-6cf9-4387-b31f-99ccec91cef5",
+              "targetStep": "/api/3/workflow_steps/439363a5-6099-4519-a120-1e203fb7edd2"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "c9e5aca6-3173-43dc-bcad-7a3577fdd7d4",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "55c34850-17e1-45bb-a039-46a67a34782a",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Retrieves the mappings/applications list from the Cyolo",
           "name": "Get Mappings List",
@@ -830,16 +830,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/dcaf3d67-e95b-4309-989f-ac192df1c067",
+          "triggerStep": "/api/3/workflow_steps/65511ca8-7155-4ff6-99e1-aec6216f9d53",
           "steps": [
             {
-              "uuid": "dcaf3d67-e95b-4309-989f-ac192df1c067",
+              "uuid": "65511ca8-7155-4ff6-99e1-aec6216f9d53",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "a3c6a463-064b-4df3-83f0-99f8be9224b0",
+                "route": "fde3b9e7-8c74-491e-a764-1beff4ff5db0",
                 "title": "Cyolo: Get Mappings List",
                 "resources": [
                   "alerts"
@@ -859,7 +859,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "d43a0499-8f87-4edf-be68-623ed289117e",
+              "uuid": "d7858f5a-9a4f-411b-a2f9-a070092d30b9",
               "@type": "WorkflowStep",
               "name": "Get Mappings List",
               "description": null,
@@ -884,19 +884,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "7ce861f3-180e-4840-b457-3e548e630b41",
+              "uuid": "237bb31b-bb04-47de-a53a-1a50d6aa73a6",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Mappings List",
-              "sourceStep": "/api/3/workflow_steps/dcaf3d67-e95b-4309-989f-ac192df1c067",
-              "targetStep": "/api/3/workflow_steps/d43a0499-8f87-4edf-be68-623ed289117e"
+              "sourceStep": "/api/3/workflow_steps/65511ca8-7155-4ff6-99e1-aec6216f9d53",
+              "targetStep": "/api/3/workflow_steps/d7858f5a-9a4f-411b-a2f9-a070092d30b9"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "e4fca92b-96f2-4d1e-b2ce-6539f83c16b1",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "77b0b4a2-9212-4eed-81ef-2b0027bdbea1",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Retrieves the webhooks (user-defined HTTP callbacks) list from the Cyolo",
           "name": "Get Webhooks List",
@@ -910,16 +910,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/99db895f-81f4-492f-ada1-2c4702f457b9",
+          "triggerStep": "/api/3/workflow_steps/d8e725df-ef44-4d44-992a-5aef00253ee5",
           "steps": [
             {
-              "uuid": "99db895f-81f4-492f-ada1-2c4702f457b9",
+              "uuid": "d8e725df-ef44-4d44-992a-5aef00253ee5",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "80963364-abb6-4388-bcfc-e59667aadff5",
+                "route": "6492e9be-534a-4a5b-99cc-5ab8b2dfc1f6",
                 "title": "Cyolo: Get Webhooks List",
                 "resources": [
                   "alerts"
@@ -939,7 +939,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "29bd9ddb-a751-4a4b-a318-dbc5c0b0278a",
+              "uuid": "af9c0a79-2393-4000-a52a-8db65ed54e23",
               "@type": "WorkflowStep",
               "name": "Get Webhooks List",
               "description": null,
@@ -964,19 +964,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "8b6500d4-96d8-4152-84c5-572cc40df530",
+              "uuid": "085d8f6d-7b0c-421c-82bd-8c5a601133a3",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Webhooks List",
-              "sourceStep": "/api/3/workflow_steps/99db895f-81f4-492f-ada1-2c4702f457b9",
-              "targetStep": "/api/3/workflow_steps/29bd9ddb-a751-4a4b-a318-dbc5c0b0278a"
+              "sourceStep": "/api/3/workflow_steps/d8e725df-ef44-4d44-992a-5aef00253ee5",
+              "targetStep": "/api/3/workflow_steps/af9c0a79-2393-4000-a52a-8db65ed54e23"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "4fbd6834-5d19-42e5-a433-a0d922ede5ed",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "d6d4c9f5-93ce-49e2-8496-f2969d032cc4",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Retrieves the device posture profiles (conditions that users' devices must meet in order to access resources.) list from the Cyolo",
           "name": "Get Device Posture Profiles List",
@@ -990,16 +990,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/c83045e2-3b0b-4e7d-91c6-723a192fe00c",
+          "triggerStep": "/api/3/workflow_steps/c1797f6e-425a-4cfe-9bbd-84fe5735ee97",
           "steps": [
             {
-              "uuid": "c83045e2-3b0b-4e7d-91c6-723a192fe00c",
+              "uuid": "c1797f6e-425a-4cfe-9bbd-84fe5735ee97",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "28aa4a3c-3a60-4595-beed-e02714392470",
+                "route": "bc993cb6-1da4-4668-8c7a-e69e59f8e993",
                 "title": "Cyolo: Get Device Posture Profiles List",
                 "resources": [
                   "alerts"
@@ -1019,7 +1019,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "5afe9071-bfeb-4486-9191-a1eee7397e62",
+              "uuid": "9b5446c7-31de-430a-9365-a8ed4c96d381",
               "@type": "WorkflowStep",
               "name": "Get Device Posture Profiles List",
               "description": null,
@@ -1044,19 +1044,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "a45431db-bf1d-44f3-ba74-e728c9950a29",
+              "uuid": "a637159c-fc70-48a7-aa4f-63f8a75f3055",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Device Posture Profiles List",
-              "sourceStep": "/api/3/workflow_steps/c83045e2-3b0b-4e7d-91c6-723a192fe00c",
-              "targetStep": "/api/3/workflow_steps/5afe9071-bfeb-4486-9191-a1eee7397e62"
+              "sourceStep": "/api/3/workflow_steps/c1797f6e-425a-4cfe-9bbd-84fe5735ee97",
+              "targetStep": "/api/3/workflow_steps/9b5446c7-31de-430a-9365-a8ed4c96d381"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "47b5614f-0002-4dca-83cb-c0e75f260b88",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "35ab0e69-2d33-43f9-882d-83f0bd7eb6cf",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Retrieves the mapping categories list from the Cyolo",
           "name": "Get Mapping Categories List",
@@ -1070,16 +1070,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/254aaef9-24c4-46fa-a022-e48959614c6a",
+          "triggerStep": "/api/3/workflow_steps/a0a6eb62-891f-46e1-97ea-0dc7f7202d68",
           "steps": [
             {
-              "uuid": "254aaef9-24c4-46fa-a022-e48959614c6a",
+              "uuid": "a0a6eb62-891f-46e1-97ea-0dc7f7202d68",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "66aae877-935a-4a0b-b021-cd59fb6b830b",
+                "route": "791a39e9-a68d-4cd1-bf85-7980b4d9b443",
                 "title": "Cyolo: Get Mapping Categories List",
                 "resources": [
                   "alerts"
@@ -1099,7 +1099,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "a96747f4-cdcc-47ed-a376-d2db8a999745",
+              "uuid": "eb221c9b-31e3-4a25-908b-93fee60a345f",
               "@type": "WorkflowStep",
               "name": "Get Mapping Categories List",
               "description": null,
@@ -1124,19 +1124,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "4561a0f4-909a-4af8-8bb1-a5f10f728647",
+              "uuid": "78d50280-11e9-4c9f-96a4-1109cdb9dd2b",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Mapping Categories List",
-              "sourceStep": "/api/3/workflow_steps/254aaef9-24c4-46fa-a022-e48959614c6a",
-              "targetStep": "/api/3/workflow_steps/a96747f4-cdcc-47ed-a376-d2db8a999745"
+              "sourceStep": "/api/3/workflow_steps/a0a6eb62-891f-46e1-97ea-0dc7f7202d68",
+              "targetStep": "/api/3/workflow_steps/eb221c9b-31e3-4a25-908b-93fee60a345f"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "52420dbb-9caa-4229-841d-c9165a67768f",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "47cbc082-2961-4a1c-9b64-d5ffa5b3a17d",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Retrieves the certificates list from the Cyolo",
           "name": "Get Certificates List",
@@ -1150,16 +1150,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/616d52d3-41f7-4245-b8b6-7c15b6799a64",
+          "triggerStep": "/api/3/workflow_steps/12e5f39f-dfeb-44c8-811c-63b76afd89d6",
           "steps": [
             {
-              "uuid": "616d52d3-41f7-4245-b8b6-7c15b6799a64",
+              "uuid": "12e5f39f-dfeb-44c8-811c-63b76afd89d6",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "679e3ad4-9f66-4c44-b291-78b744173923",
+                "route": "1fbed825-2892-4eea-ae39-06f2d570905d",
                 "title": "Cyolo: Get Certificates List",
                 "resources": [
                   "alerts"
@@ -1179,7 +1179,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "2027935f-92f5-4c2b-885e-629e1f751c0d",
+              "uuid": "30953c8b-cd79-4bb0-ad8a-a66123faae46",
               "@type": "WorkflowStep",
               "name": "Get Certificates List",
               "description": null,
@@ -1204,19 +1204,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "fd711d2e-7666-4add-9fce-bfd4d145f2ef",
+              "uuid": "44704b8a-28ea-4aab-ae90-73366f5bc292",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Certificates List",
-              "sourceStep": "/api/3/workflow_steps/616d52d3-41f7-4245-b8b6-7c15b6799a64",
-              "targetStep": "/api/3/workflow_steps/2027935f-92f5-4c2b-885e-629e1f751c0d"
+              "sourceStep": "/api/3/workflow_steps/12e5f39f-dfeb-44c8-811c-63b76afd89d6",
+              "targetStep": "/api/3/workflow_steps/30953c8b-cd79-4bb0-ad8a-a66123faae46"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "7d3b0f61-1d26-4fd4-8b77-dd7f252736d1",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "fc66916b-f027-4ab2-9bb6-5045e0adc174",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Creates a policy in the cyolo based on the parameters provided.",
           "name": "Create Policy",
@@ -1230,16 +1230,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/73934b2f-57da-4af9-bdff-557e6ddace46",
+          "triggerStep": "/api/3/workflow_steps/ddaba159-ba96-45b3-98bf-21ce6c46449d",
           "steps": [
             {
-              "uuid": "73934b2f-57da-4af9-bdff-557e6ddace46",
+              "uuid": "ddaba159-ba96-45b3-98bf-21ce6c46449d",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "20bc6724-fcab-4bb9-aaa5-d1979c27468f",
+                "route": "ce9cb91c-deb2-4923-8a9b-31f7933a62d3",
                 "title": "Cyolo: Create Policy",
                 "resources": [
                   "alerts"
@@ -1259,7 +1259,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "54c40bb8-71d6-4ecc-8bc8-ced9cfa2299f",
+              "uuid": "5f5c7faa-dd54-417b-a682-50595ec93b8d",
               "@type": "WorkflowStep",
               "name": "Create Policy",
               "description": null,
@@ -1284,19 +1284,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "7b3fe124-77e3-449c-882a-a318b377429f",
+              "uuid": "792d5836-6a77-4031-8004-8924c1e614f5",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Create Policy",
-              "sourceStep": "/api/3/workflow_steps/73934b2f-57da-4af9-bdff-557e6ddace46",
-              "targetStep": "/api/3/workflow_steps/54c40bb8-71d6-4ecc-8bc8-ced9cfa2299f"
+              "sourceStep": "/api/3/workflow_steps/ddaba159-ba96-45b3-98bf-21ce6c46449d",
+              "targetStep": "/api/3/workflow_steps/5f5c7faa-dd54-417b-a682-50595ec93b8d"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "e8a3442c-4051-49d8-b5dc-59d3f7395dc5",
-          "collection": "/api/3/workflow_collections/19e8e928-78c2-4028-a133-e48e11d6726c",
+          "uuid": "3d207b17-614f-4ae9-960d-439c66d161b3",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
           "triggerLimit": null,
           "description": "Update a policy in the cyolo based on the parameters provided.",
           "name": "Update Policy",
@@ -1310,16 +1310,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/47b022bd-8dcb-42e9-988a-dfe02637ec37",
+          "triggerStep": "/api/3/workflow_steps/78196272-9ce2-4829-b063-6547be276587",
           "steps": [
             {
-              "uuid": "47b022bd-8dcb-42e9-988a-dfe02637ec37",
+              "uuid": "78196272-9ce2-4829-b063-6547be276587",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "599d5d30-4bb8-437c-be1f-01abc5b7d2a9",
+                "route": "1bb97c07-9db0-4071-b4d1-784dfeaca79e",
                 "title": "Cyolo: Update Policy",
                 "resources": [
                   "alerts"
@@ -1339,7 +1339,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "be3d40f5-e196-4aca-84df-92934b1d2666",
+              "uuid": "4ab75a96-8675-4c42-b9d2-6f8486f79fa6",
               "@type": "WorkflowStep",
               "name": "Update Policy",
               "description": null,
@@ -1364,12 +1364,92 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "6ebcfe52-6d0e-4beb-912c-e693df630912",
+              "uuid": "76489b27-d69c-4047-8c23-3c94fc346593",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Update Policy",
-              "sourceStep": "/api/3/workflow_steps/47b022bd-8dcb-42e9-988a-dfe02637ec37",
-              "targetStep": "/api/3/workflow_steps/be3d40f5-e196-4aca-84df-92934b1d2666"
+              "sourceStep": "/api/3/workflow_steps/78196272-9ce2-4829-b063-6547be276587",
+              "targetStep": "/api/3/workflow_steps/4ab75a96-8675-4c42-b9d2-6f8486f79fa6"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "95ba6454-6154-4c90-96d4-89468d0070e0",
+          "collection": "/api/3/workflow_collections/6a958a61-de37-435c-9d9c-8bef906a266f",
+          "triggerLimit": null,
+          "description": "Deletes user from policy based on the ID(s) of the user provided.",
+          "name": "Delete User From Policy",
+          "tag": "#Cyolo",
+          "recordTags": [
+            "Cyolo",
+            "cyolo"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/8de6a5ed-0595-42ed-a0c2-6e929b549e56",
+          "steps": [
+            {
+              "uuid": "8de6a5ed-0595-42ed-a0c2-6e929b549e56",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "5a676a6c-f63f-4963-94e6-a73da7658ab5",
+                "title": "Cyolo: Delete User From Policy",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "1fe33e54-1218-4247-94dc-da86507dcc7c",
+              "@type": "WorkflowStep",
+              "name": "Delete User From Policy",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cyolo",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "cyolo",
+                "operation": "delete_user_from_policy",
+                "operationTitle": "Delete User From Policy",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "09db45f5-f8e4-460b-be45-c30591746188",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete User From Policy",
+              "sourceStep": "/api/3/workflow_steps/8de6a5ed-0595-42ed-a0c2-6e929b549e56",
+              "targetStep": "/api/3/workflow_steps/1fe33e54-1218-4247-94dc-da86507dcc7c"
             }
           ]
         }
