@@ -1396,7 +1396,7 @@
         },
         {
           "title": "Users",
-          "required": false,
+          "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
