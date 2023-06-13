@@ -75,6 +75,8 @@ def update_policy(config, params):
         if policy['id'] == str(params.get('id')):
             original_policy = policy
             break
+    if not original_policy:
+        raise ConnectorError("Invalid Policy ID")
     for attr in POLICY_ATTR:
         attr_id_list = list()
         for attr_details in original_policy[attr]:
@@ -129,6 +131,8 @@ def delete_user_from_policy(config, params):
         if policy['id'] == str(params.get('id')):
             original_policy = policy
             break
+    if not original_policy:
+        raise ConnectorError("Invalid Policy ID")
     for attr in POLICY_ATTR:
         attr_id_list = list()
         for attr_details in original_policy[attr]:
@@ -184,18 +188,13 @@ def list_mapping_categories(config, params):
     return make_api_call(endpoint=endpoint, config=config)
 
 
-def list_mapping_categories(config, params):
-    endpoint = "mapping_category"
-    return make_api_call(endpoint=endpoint, config=config)
-
-
 def list_webhooks(config, params):
     endpoint = "webhooks"
     return make_api_call(endpoint=endpoint, config=config)
 
 
 def list_certificates(config, params):
-    endpoint = "webhooks"
+    endpoint = "certificates"
     return make_api_call(endpoint=endpoint, config=config)
 
 
