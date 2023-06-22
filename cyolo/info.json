@@ -1213,6 +1213,7 @@
           "visible": true,
           "type": "checkbox",
           "description": "Select the checkbox to enable the policy. To disable the policy, clear the checkbox.",
+          "tooltip": "Select the checkbox to enable the policy. To disable the policy, clear the checkbox.",
           "name": "enabled"
         },
         {
