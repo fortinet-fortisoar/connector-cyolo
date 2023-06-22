@@ -29,6 +29,7 @@
         "visible": true,
         "type": "password",
         "description": "Specify the value specified in Authorization Header field to access the Cyolo APIs and perform automated operations. The Authorization Header value is obtained when creating an API key in Cyolo.",
+        "tooltip": "Specify the value specified in Authorization Header field to access the Cyolo APIs and perform automated operations. The Authorization Header value is obtained when creating an API key in Cyolo.",
         "name": "api_key"
       },
       {
@@ -251,7 +252,7 @@
     },
     {
       "title": "Get Policy List",
-      "description": "Specify the policy ID or name to retrieve its details.",
+      "description": "Retrieves the policy list from Cyolo.",
       "operation": "list_policies",
       "category": "investigation",
       "annotation": "list_policies",
