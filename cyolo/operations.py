@@ -89,7 +89,7 @@ def update_policy(config, params):
         else:
             updated_policy_payload[x] = params.get(x) if params.get(x) else original_policy.get(x)
     updated_policy_payload['timed_access'] = {
-        "enabled": params.pop('timed_access_status', original_policy['enabled']),
+        "enabled": params.pop('timed_access_status', original_policy['timed_access']['enabled']),
         "start": handle_date(params.get('start')) if params.get('start') else original_policy['timed_access']['start'],
         "end": handle_date(params.get('end')) if params.get('end') else original_policy['timed_access']['end'],
         "days": [True if x in str(params.get('days')) else False for x in DAY_LIST] if params.get('days') else original_policy['timed_access']['days']

@@ -9,7 +9,7 @@
   "category": "Identity and Access Management",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/cyolo/610/cyolo-v1-0-0",
   "configuration": {
     "fields": [
       {
@@ -28,7 +28,7 @@
         "editable": true,
         "visible": true,
         "type": "password",
-        "description": "Specify the API Key used to access the Cyolo APIs and perform automated operations.",
+        "description": "Specify the value specified in Authorization Header field to access the Cyolo APIs and perform automated operations. The Authorization Header value is obtained when creating an API key in Cyolo.",
         "name": "api_key"
       },
       {
@@ -79,7 +79,7 @@
     },
     {
       "title": "Get User Policies",
-      "description": "Retrieves the list of policies associated with the user based on the user ID provided",
+      "description": "Retrieves the list of policies associated with the user ID that you have specified.",
       "operation": "list_user_policies",
       "category": "investigation",
       "annotation": "list_user_policies",
@@ -90,7 +90,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "Specify the user ID to retrieve its policies",
+          "description": "Specify the user ID to retrieve its associated policies.",
           "name": "id"
         }
       ],
@@ -187,7 +187,7 @@
     },
     {
       "title": "Get User By ID Or Name",
-      "description": "Retrieves the user details based on the ID or name provided.",
+      "description": "Retrieves the user details based on the user ID or the name that you have specified.",
       "operation": "get_user_by_id_or_name",
       "category": "investigation",
       "annotation": "get_user_by_id_or_name",
@@ -198,7 +198,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "Specify the user ID or name to retrieve its details",
+          "description": "Specify the user ID or name to retrieve the user's details.",
           "name": "id"
         }
       ],
@@ -228,7 +228,7 @@
     },
     {
       "title": "Delete User By ID Or Name",
-      "description": "Deletes the user details based on the ID or name provided.",
+      "description": "Deletes the user details based on the user ID or the name that you have specified.",
       "operation": "delete_user_by_id_or_name",
       "category": "investigation",
       "annotation": "delete_user_by_id_or_name",
@@ -239,7 +239,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "Specify the user ID or name to retrieve its details",
+          "description": "Specify the user ID or name to delete that user.",
           "name": "id"
         }
       ],
@@ -251,7 +251,7 @@
     },
     {
       "title": "Get Policy List",
-      "description": "Retrieves the policy list from the Cyolo",
+      "description": "Specify the policy ID or name to retrieve its details.",
       "operation": "list_policies",
       "category": "investigation",
       "annotation": "list_policies",
@@ -350,7 +350,7 @@
     },
     {
       "title": "Get Policy By ID Or Name",
-      "description": "Retrieves the policy details based on the ID or name provided from the Cyolo",
+      "description": "Retrieves the policy details based on the policy ID or the name that you have specified.",
       "operation": "get_policy_by_id_or_name",
       "category": "investigation",
       "annotation": "get_policy_by_id_or_name",
@@ -540,7 +540,7 @@
     },
     {
       "title": "Get Mappings List",
-      "description": "Retrieves the mappings/applications list from the Cyolo",
+      "description": "Retrieves the mappings or applications list from Cyolo.",
       "operation": "list_mappings",
       "category": "investigation",
       "annotation": "list_mappings",
@@ -737,7 +737,7 @@
     },
     {
       "title": "Create Policy",
-      "description": "Creates a policy in the cyolo based on the parameters provided.",
+      "description": "Creates a policy in Cyolo based on the name and other input parameters that you have specified.",
       "operation": "create_policy",
       "category": "investigation",
       "annotation": "create_policy",
@@ -748,7 +748,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "Specify the name of the policy",
+          "description": "Specify a name of the policy to be created. ",
           "name": "name"
         },
         {
@@ -758,7 +758,7 @@
           "visible": true,
           "type": "checkbox",
           "tooltip": "Specify whether to enable on disable the policy",
-          "description": "Specify whether to enable on disable the policy",
+          "description": "Select the checkbox to enable the policy. ",
           "name": "enabled"
         },
         {
@@ -768,7 +768,8 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the dynamic groups IDs which you want to assign to the policy. You can specify multiple dynamic group IDs as comma-separated values.",
-          "description": "Specify the dynamic groups IDs which you want to assign to the policy. You can specify multiple dynamic group IDs as comma-separated values.",
+          "description": "Specify the dynamic groups IDs to assign to the policy. You can specify multiple dynamic group IDs as comma-separated values.",
+          "placeholder": "id1, id2, id3",
           "name": "dynamic_groups"
         },
         {
@@ -778,7 +779,8 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the simple groups IDs which you want to assign to the policy. You can specify multiple simple group IDs as comma-separated values.",
-          "description": "Specify the simple groups IDs which you want to assign to the policy. You can specify multiple simple group IDs as comma-separated values.",
+          "description": "Specify the simple groups IDs to assign to the policy. You can specify multiple simple group IDs as comma-separated values. ",
+          "placeholder": "id1, id2, id3",
           "name": "simple_groups"
         },
         {
@@ -788,7 +790,8 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the mapping/application IDs which you want to assign to the policy. You can specify multiple mapping/application IDs as comma-separated values.",
-          "description": "Specify the mapping/application IDs which you want to assign to the policy. You can specify multiple mapping/application IDs as comma-separated values.",
+          "description": "Specify the mapping or application IDs to assign to the policy. You can specify multiple mapping or application IDs as comma-separated values. ",
+          "placeholder": "id1, id2, id3",
           "name": "mappings"
         },
         {
@@ -798,7 +801,8 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the mapping category IDs which you want to assign to the policy. You can specify multiple mapping category IDs as comma-separated values.",
-          "description": "Specify the mapping category IDs which you want to assign to the policy. You can specify multiple mapping category IDs as comma-separated values.",
+          "description": "Specify the mapping category IDs to assign to the policy. You can specify multiple mapping category IDs as comma-separated values.",
+          "placeholder": "id1, id2, id3",
           "name": "mapping_categories"
         },
         {
@@ -808,7 +812,8 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the supervisors IDs which you want to assign to the policy. You can specify multiple supervisors IDs as comma-separated values.",
-          "description": "Specify the supervisors IDs which you want to assign to the policy. You can specify multiple supervisors IDs as comma-separated values.",
+          "description": "Specify the supervisors IDs to assign to the policy. You can specify multiple supervisors IDs as comma-separated values. ",
+          "placeholder": "id1, id2, id3",
           "name": "supervisors"
         },
         {
@@ -818,7 +823,8 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the User IDs which you want to assign to the policy. You can specify multiple user IDs as comma-separated values.",
-          "description": "Specify the User IDs which you want to assign to the policy. You can specify multiple user IDs as comma-separated values.",
+          "description": "Specify the User IDs to assign to the policy. You can specify multiple user IDs as comma-separated values.",
+          "placeholder": "id1, id2, id3",
           "name": "users"
         },
         {
@@ -828,7 +834,8 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the webhooks IDs which you want to associate with the policy. You can specify multiple webhooks IDs as comma-separated values.",
-          "description": "Specify the webhooks IDs which you want to associate with the policy. You can specify multiple webhooks IDs as comma-separated values.",
+          "description": "Specify the webhooks IDs to associate with the policy. You can specify multiple webhooks IDs as comma-separated values. ",
+          "placeholder": "id1, id2, id3",
           "name": "webhooks"
         },
         {
@@ -838,7 +845,7 @@
           "visible": true,
           "type": "checkbox",
           "tooltip": "Specify whether you want to enable Timed Access or not",
-          "description": "Specify whether you want to enable Timed Access or not",
+          "description": "Select the checkbox to enable timed access.",
           "name": "timed_access_status"
         },
         {
@@ -848,7 +855,7 @@
           "visible": true,
           "type": "datetime",
           "tooltip": "Specify the start time for the policy to be applicable.",
-          "description": "Specify the start time for the policy to be applicable.",
+          "description": "Specify the start time after when the policy takes effect.",
           "name": "start"
         },
         {
@@ -858,7 +865,7 @@
           "visible": true,
           "type": "datetime",
           "tooltip": "Specify the end time for the policy to be applicable.",
-          "description": "Specify the end time for the policy to be applicable.",
+          "description": "Specify the end time after when the policy is no longer applicable.",
           "name": "end"
         },
         {
@@ -868,7 +875,7 @@
           "visible": true,
           "type": "multiselect",
           "tooltip": "Specify the days on which the policy will be applicable.",
-          "description": "Specify the days on which the policy will be applicable.",
+          "description": "Select the days on which the policy is applicable. You can select more than one option.",
           "name": "days",
           "options": [
             "Sunday",
@@ -887,7 +894,8 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the trusted certificates IDs which you want to associate with the policy. You can specify multiple trusted certificates IDs as comma-separated values.",
-          "description": "Specify the trusted certificates IDs which you want to associate with the policy. You can specify multiple trusted certificates IDs as comma-separated values.",
+          "description": "Specify the trusted certificates IDs to associate with the policy. You can specify multiple trusted certificates IDs as comma-separated values.",
+          "placeholder": "id1, id2, id3",
           "name": "trusted_certificates"
         },
         {
@@ -897,7 +905,8 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the device posture profiles IDs which you want to associate with the policy. You can specify multiple device posture profiles IDs as comma-separated values.",
-          "description": "Specify the device posture profiles IDs which you want to associate with the policy. You can specify multiple device posture profiles IDs as comma-separated values.",
+          "description": "Specify the device posture profiles IDs to associate with the policy. You can specify multiple device posture profiles IDs as comma-separated values.",
+          "placeholder": "id1, id2, id3",
           "name": "device_posture_profiles"
         },
         {
@@ -907,7 +916,7 @@
           "visible": true,
           "type": "json",
           "tooltip": "Specify the list of capabilities which you want to associate with the policy. e.g: [\n        {\n            \"capability_id\": \"11\",\n            \"value\": true\n        },\n        {\n            \"capability_id\": \"12\",\n            \"value\": true\n        }]",
-          "description": "Specify the list of capabilities which you want to associate with the policy. e.g: [\n        {\n            \"capability_id\": \"11\",\n            \"value\": true\n        },\n        {\n            \"capability_id\": \"12\",\n            \"value\": true\n        }]",
+          "description": "Specify the list of capabilities to associate with the policy. For example:  \n\n    [ \n\n    { \n\n        \"capability_id\": \"11\", \n\n        \"value\": true \n\n    }, \n\n    { \n\n        \"capability_id\": \"12\", \n\n        \"value\": true \n\n    } \n\n    ] ",
           "name": "capabilities"
         },
         {
@@ -917,7 +926,7 @@
           "visible": true,
           "type": "json",
           "tooltip": "Specify the list of constraints which you want to associate with the policy. e.g: [\n        {\n            \"constraint_id\": \"2\",\n            \"value\": true\n        },\n        {\n            \"constraint_id\": \"3\",\n            \"value\": \"1\"\n        }]",
-          "description": "Specify the list of constraints which you want to associate with the policy. e.g: [\n        {\n            \"constraint_id\": \"2\",\n            \"value\": true\n        },\n        {\n            \"constraint_id\": \"3\",\n            \"value\": \"1\"\n        }]",
+          "description": "Specify the list of constraints to associate with the policy. For example:  \n\n    [ \n\n    { \n\n        \"constraint_id\": \"2\", \n\n        \"value\": true \n\n    }, \n\n    { \n\n        \"constraint_id\": \"3\", \n\n        \"value\": \"1\" \n\n    } \n\n    ]",
           "name": "constraints"
         }
       ],
@@ -1172,7 +1181,7 @@
     },
     {
       "title": "Update Policy",
-      "description": "Update a policy in the cyolo based on the parameters provided.",
+      "description": "Update a policy in Cyolo based on the policy ID, name, and other input parameters that you have specified.",
       "operation": "update_policy",
       "category": "investigation",
       "annotation": "update_policy",
@@ -1183,7 +1192,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "Specify the policy ID to update its details",
+          "description": "Specify the ID of the policy to be updated.",
           "name": "id"
         },
         {
@@ -1192,7 +1201,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "Specify the name of the policy",
+          "description": "Specify the name of the policy to update its name.",
+          "tooltip": "Specify the name of the policy to update its name.",
           "name": "name"
         },
         {
@@ -1201,7 +1211,7 @@
           "editable": true,
           "visible": true,
           "type": "checkbox",
-          "description": "Specify whether to enable on disable the policy",
+          "description": "Select the checkbox to enable the policy. To disable the policy, clear the checkbox.",
           "name": "enabled"
         },
         {
@@ -1211,7 +1221,7 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the dynamic groups IDs which you want to assign to the policy. You can specify multiple dynamic group IDs as comma-separated values.",
-          "description": "Specify the dynamic groups IDs which you want to assign to the policy. You can specify multiple dynamic group IDs as comma-separated values.",
+          "description": "Specify the dynamic groups IDs to assign to the policy. You can specify multiple dynamic group IDs as comma-separated values.",
           "placeholder": "id1, id2, id3",
           "name": "dynamic_groups"
         },
@@ -1222,7 +1232,7 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the simple groups IDs which you want to assign to the policy. You can specify multiple simple group IDs as comma-separated values.",
-          "description": "Specify the simple groups IDs which you want to assign to the policy. You can specify multiple simple group IDs as comma-separated values.",
+          "description": "Specify the simple groups IDs to assign to the policy. You can specify multiple simple group IDs as comma-separated values.",
           "name": "simple_groups",
           "placeholder": "id1, id2, id3"
         },
@@ -1233,7 +1243,7 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the mapping/application IDs which you want to assign to the policy. You can specify multiple mapping/application IDs as comma-separated values.",
-          "description": "Specify the mapping/application IDs which you want to assign to the policy. You can specify multiple mapping/application IDs as comma-separated values.",
+          "description": "Specify the mapping/application IDs to assign to the policy. You can specify multiple mapping/application IDs as comma-separated values. ",
           "name": "mappings",
           "placeholder": "id1, id2, id3"
         },
@@ -1244,7 +1254,7 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the mapping category IDs which you want to assign to the policy. You can specify multiple mapping category IDs as comma-separated values.",
-          "description": "Specify the mapping category IDs which you want to assign to the policy. You can specify multiple mapping category IDs as comma-separated values.",
+          "description": "Specify the mapping category IDs to assign to the policy. You can specify multiple mapping category IDs as comma-separated values. ",
           "name": "mapping_categories",
           "placeholder": "id1, id2, id3"
         },
@@ -1255,7 +1265,7 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the supervisors IDs which you want to assign to the policy. You can specify multiple supervisors IDs as comma-separated values.",
-          "description": "Specify the supervisors IDs which you want to assign to the policy. You can specify multiple supervisors IDs as comma-separated values.",
+          "description": "Specify the supervisors IDs to assign to the policy. You can specify multiple supervisors IDs as comma-separated values. ",
           "name": "supervisors",
           "placeholder": "id1, id2, id3"
         },
@@ -1266,7 +1276,7 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the User IDs which you want to assign to the policy. You can specify multiple user IDs as comma-separated values.",
-          "description": "Specify the User IDs which you want to assign to the policy. You can specify multiple user IDs as comma-separated values.",
+          "description": "Specify the User IDs to assign to the policy. You can specify multiple user IDs as comma-separated values. ",
           "name": "users",
           "placeholder": "id1, id2, id3"
         },
@@ -1277,7 +1287,7 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the webhooks IDs which you want to associate with the policy. You can specify multiple webhooks IDs as comma-separated values.",
-          "description": "Specify the webhooks IDs which you want to associate with the policy. You can specify multiple webhooks IDs as comma-separated values.",
+          "description": "Specify the webhooks IDs to associate with the policy. You can specify multiple webhooks IDs as comma-separated values. ",
           "name": "webhooks",
           "placeholder": "id1, id2, id3"
         },
@@ -1288,7 +1298,7 @@
           "visible": true,
           "type": "checkbox",
           "tooltip": "Specify whether you want to enable Timed Access or not",
-          "description": "Specify whether you want to enable Timed Access or not",
+          "description": "Select the checkbox to enable timed access. To disable timed access, clear the checkbox.",
           "name": "timed_access_status"
         },
         {
@@ -1298,7 +1308,7 @@
           "visible": true,
           "type": "datetime",
           "tooltip": "Specify the start time for the policy to be applicable.",
-          "description": "Specify the start time for the policy to be applicable.",
+          "description": "Specify the start time after when the policy takes effect. ",
           "name": "start"
         },
         {
@@ -1308,7 +1318,7 @@
           "visible": true,
           "type": "datetime",
           "tooltip": "Specify the end time for the policy to be applicable.",
-          "description": "Specify the end time for the policy to be applicable.",
+          "description": "Specify the end time after when the policy is no longer applicable. ",
           "name": "end"
         },
         {
@@ -1318,7 +1328,7 @@
           "visible": true,
           "type": "multiselect",
           "tooltip": "Specify the days on which the policy will be applicable.",
-          "description": "Specify the days on which the policy will be applicable.",
+          "description": "Select the days on which the policy is applicable. You can select more than one option.",
           "name": "days",
           "options": [
             "Sunday",
@@ -1337,7 +1347,7 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the trusted certificates IDs which you want to associate with the policy. You can specify multiple trusted certificates IDs as comma-separated values.",
-          "description": "Specify the trusted certificates IDs which you want to associate with the policy. You can specify multiple trusted certificates IDs as comma-separated values.",
+          "description": "Specify the trusted certificates IDs to associate with the policy. You can specify multiple trusted certificates IDs as comma-separated values.",
           "name": "trusted_certificates",
           "placeholder": "id1, id2, id3"
         },
@@ -1348,7 +1358,7 @@
           "visible": true,
           "type": "text",
           "tooltip": "Specify the device posture profiles IDs which you want to associate with the policy. You can specify multiple device posture profiles IDs as comma-separated values.",
-          "description": "Specify the device posture profiles IDs which you want to associate with the policy. You can specify multiple device posture profiles IDs as comma-separated values.",
+          "description": "Specify the device posture profiles IDs to associate with the policy. You can specify multiple device posture profiles IDs as comma-separated values.",
           "name": "device_posture_profiles",
           "placeholder": "id1, id2, id3"
         },
