@@ -87,7 +87,7 @@ def update_policy(config, params):
         if isinstance(original_policy[x], list):
             updated_policy_payload[x] = original_policy.get(x) + params.get(x) if params.get(x) else original_policy.get(x)
         else:
-            updated_policy_payload[x] = params.get(x) if params.get(x) else original_policy.get(x)
+            updated_policy_payload[x] = params.get(x) if params.get(x) or params.get(x) is False else original_policy.get(x)
     updated_policy_payload['timed_access'] = {
         "enabled": params.pop('timed_access_status', original_policy['timed_access']['enabled']),
         "start": handle_date(params.get('start')) if params.get('start') else original_policy['timed_access']['start'],
@@ -201,7 +201,7 @@ def list_certificates(config, params):
 def build_policy_payload(params):
     params = {k: v for k, v in params.items() if v is not None and v != ''}
     for x in PARAM_LIST:
-        if params.get(x):
+        if params.get(x) or params.get(x) is False:
             if isinstance(params.get(x), list):
                 params[x] = [str(item) for item in params.get(x)]
             else:
